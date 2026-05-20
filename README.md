@@ -169,10 +169,14 @@ Planned dashboard pages:
 
 This project is being built in public with weekly updates on LinkedIn.
 
-**Author:** Arafat
+**Author:** Arafat Siddiqui
+
 **Email:** arafatsiddiqui3@gmail.com
-**LinkedIn:** <a href="https://www.linkedin.com/in/arafat-siddiqui/">Arafat Siddiqui<a/>
-**Portfolio:** https://arafat3-portfolio.netlify.app/
+
+**LinkedIn:** [Arafat Siddiqui](https://www.linkedin.com/in/arafat-siddiqui/)
+
+**Portfolio:** [arafat3-portfolio.netlify.app](https://arafat3-portfolio.netlify.app/)
+
 **GitHub:** [Arafat3-DA](https://github.com/Arafat3-DA)
 
 ---
