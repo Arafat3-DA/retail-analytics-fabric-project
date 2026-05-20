@@ -37,7 +37,7 @@ Raw Files → 🥉 Bronze Layer → 🥈 Silver Layer → 🥇 Gold Layer → �
 │                    Microsoft Fabric                         │
 │                                                             │
 │  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐   │
-│  │   🥉 BRONZE   │───▶│   🥈 SILVER   │───▶│   🥇 GOLD   │ 
+│  │   🥉 BRONZE │───▶│  🥈 SILVER  │───▶│   🥇 GOLD   │   │
 │  │  Raw Files   │    │  Cleaned &   │    │  Aggregated  │   │
 │  │  (as-is)     │    │  Typed Data  │    │  Business    │   │
 │  │              │    │              │    │  Models      │   │
@@ -55,7 +55,7 @@ Raw Files → 🥉 Bronze Layer → 🥈 Silver Layer → 🥇 Gold Layer → �
 
 | Layer | Purpose | Format | Tool |
 |---|---|---|---|
-| **Bronze** | Store raw data exactly as received — no changes | CSV / Parquet | Fabric Lakehouse |
+| **Bronze** | Store raw data exactly as received — no changes | Parquet | Fabric Lakehouse |
 | **Silver** | Clean, cast types, remove nulls, add derived columns | Delta Tables | Spark Notebooks |
 | **Gold** | Business-ready aggregations and fact/dim models | Delta Tables | Spark Notebooks |
 | **Reporting** | Interactive dashboards and KPIs | Power BI | Power BI Desktop |
@@ -64,7 +64,7 @@ Raw Files → 🥉 Bronze Layer → 🥈 Silver Layer → 🥇 Gold Layer → �
 
 ## 📦 Dataset
 
-- **Size:** 10+ million rows of retail transactional data
+- **Size:** 59+ million rows of retail transactional data across 8 integrated tables
 - **Source:** Loaded into Microsoft Fabric Lakehouse (Bronze layer)
 - **Storage:** Raw_Data_Bronze folder in Lakehouse_Bronze
 
@@ -170,6 +170,9 @@ Planned dashboard pages:
 This project is being built in public with weekly updates on LinkedIn.
 
 **Author:** Arafat
+**Email:** arafatsiddiqui3@gmail.com
+**LinkedIn:** <a href="https://www.linkedin.com/in/arafat-siddiqui/">Arafat Siddiqui<a/>
+**Portfolio:** https://arafat3-portfolio.netlify.app/
 **GitHub:** [Arafat3-DA](https://github.com/Arafat3-DA)
 
 ---
