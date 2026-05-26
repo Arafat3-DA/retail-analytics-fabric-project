@@ -99,46 +99,51 @@ Raw Files → 🥉 Bronze Layer → 🥈 Silver Layer → 🥇 Gold Layer → �
 ---
 
 ## 📁 Repository Structure
-
-```
 retail-analytics-fabric-project/
 │
-├── 📂 notebooks/               # All Fabric notebook exports (.ipynb)
-│   ├── silver_transformation.ipynb
-│   ├── gold_aggregation.ipynb
-│   └── ...
+├── 📂 notebooks/               # Fabric notebook exports (.ipynb)
+│   └── silver_transformation.ipynb
 │
 ├── 📂 docs/                    # Architecture notes and transformation logic
+│   ├── architecture.md
 │   ├── bronze_to_silver.md
-│   ├── silver_to_gold.md
 │   └── data_dictionary.md
 │
 ├── 📂 screenshots/             # Progress screenshots from Fabric and Power BI
-│   ├── lakehouse_bronze.png
-│   ├── silver_tables.png
-│   └── powerbi_dashboard.png
+│   ├── Lakehouse_bronze/
+│   │   └── Lakehouse_bronze.png
+│   └── Lakehouse_silver/
+│       └── Lakehouse_silver.png
 │
 ├── LICENSE                     # MIT License
 └── README.md                   # This file
-```
 
 ---
 
 ## 🔄 Transformation Logic
 
-### Bronze → Silver
+### Bronze → Silver ✅ Complete
 - Cast all columns to correct data types
-- Filter out null and duplicate records
+- Filter NULL records on all critical columns
+- Rename ambiguous columns — DT → OrderDate, Exchange → ExchangeRate
+- Combine GivenName + MiddleInitial + Surname → FullName
+- Drop irrelevant columns — Vehicle, Latitude, Longitude
 - Add derived columns:
-  - `GrossProfit = Revenue - Cost`
-  - `OrderYear`, `OrderMonth` from date fields
-- Write clean Delta tables to Silver Lakehouse
+  - `SalesAmount = ROUND(Quantity × UnitPrice, 2)`
+  - `GrossProfit = ROUND(SalesAmount - (Quantity × UnitCost), 2)`
+- Write clean Delta tables to Lakehouse_Silver
+- Total: 59,114,388 rows — zero data loss
 
-### Silver → Gold *(upcoming)*
-- Build fact and dimension model
-- Pre-aggregate KPIs by store, product, region, date
-- Apply currency conversion using exchange rates
-- Write final Gold tables for Power BI consumption
+### Silver → Gold 🔄 In Progress
+- Build star schema — fact_sales and dimension tables
+- Apply currency conversion — SalesAmount in USD
+- Pre-aggregate KPIs for Power BI Direct Lake mode
+- Write Gold tables to Lakehouse_Gold
+
+### Gold → Power BI ⏳ Planned
+- Connect Power BI via Direct Lake mode
+- Build 5 dashboard pages
+- Implement DAX measures and Row Level Security
 
 ---
 
@@ -158,8 +163,8 @@ Planned dashboard pages:
 
 | Week | Focus | Status |
 |---|---|---|
-| Week 1 | Setup, GitHub, Bronze → Silver transformations | 🔄 In Progress |
-| Week 2 | Silver → Gold aggregations | ⏳ Planned |
+| Week 1 | Setup, GitHub, Bronze → Silver transformations | ✅ Complete |
+| Week 2 | Silver → Gold aggregations | 🔄 In Progress |
 | Week 3 | Power BI dashboard development | ⏳ Planned |
 | Week 4 | Final testing, documentation, LinkedIn posts | ⏳ Planned |
 

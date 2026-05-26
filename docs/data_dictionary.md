@@ -175,7 +175,7 @@ This data dictionary defines the structure and metadata of the **Silver (Cleaned
 | `DayofWeek` | `string` | Attribute | Yes | Weekday full name string |
 | `DayofWeekShort`| `string` | - | Yes | Weekday three-letter code |
 | `DayofWeekNumber`|`integer` | - | Yes | Weekday calendar number |
-| `WorkingDay` | `string` | Attribute | Yes | Workday flag ('Workday' vs. 'Weekend/Holiday') |
+| `WorkingDay` | `integer` | Attribute | Yes | Workday flag (integer encoded) |
 | `WorkingDayNumber`|`integer`| - | Yes | Chronological workday indexing count |
 
 ---

@@ -11,7 +11,7 @@ The system is designed to refine data progressively through three distinct layer
 ```mermaid
 flowchart TD
     subgraph Data Sources
-        src1[(Raw Retail CSV/Parquet Files)]
+        src1[(Raw Retail Parquet Files)]
     end
 
     subgraph Microsoft Fabric SaaS Platform
@@ -108,7 +108,7 @@ sequenceDiagram
     participant PBI as 📊 Power BI
 
     Note over Raw, Bronze: Stage 1: Ingestion
-    Raw->>Bronze: Upload CSV/Parquet files to Raw_Data_Bronze folder
+    Raw->>Bronze: Upload Parquet files to Raw_Data_Bronze folder
     Bronze->>Bronze: Register Bronze Delta tables
 
     Note over Bronze, Silver: Stage 2: Quality Cleanse
