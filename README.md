@@ -99,6 +99,8 @@ Raw Files → 🥉 Bronze Layer → 🥈 Silver Layer → 🥇 Gold Layer → �
 ---
 
 ## 📁 Repository Structure
+
+```
 retail-analytics-fabric-project/
 │
 ├── 📂 notebooks/               # Fabric notebook exports (.ipynb)
@@ -117,6 +119,7 @@ retail-analytics-fabric-project/
 │
 ├── LICENSE                     # MIT License
 └── README.md                   # This file
+```
 
 ---
 
