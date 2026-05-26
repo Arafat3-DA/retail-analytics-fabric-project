@@ -10,26 +10,26 @@ The system is designed to refine data progressively through three distinct layer
 
 ```mermaid
 flowchart TD
-    subgraph Data Sources
+    subgraph data_sources ["Data Sources"]
         src1[(Raw Retail Parquet Files)]
     end
 
-    subgraph Microsoft Fabric SaaS Platform
-        subgraph 🥉 Bronze Layer [Bronze Lakehouse]
+    subgraph fabric_platform ["Microsoft Fabric SaaS Platform"]
+        subgraph bronze_layer ["🥉 Bronze Layer [Bronze Lakehouse]"]
             brz_files[Raw Storage Files: Raw_Data_Bronze]
             brz_tables[Delta Tables: bronze_currencyexchange, bronze_customer, etc.]
             src1 --> brz_files
             brz_files --> brz_tables
         end
 
-        subgraph 🥈 Silver Layer [Silver Lakehouse]
+        subgraph silver_layer ["🥈 Silver Layer [Silver Lakehouse]"]
             slv_notebook[PySpark Transformation Notebook]
             slv_tables[(Cleaned & Standardized Delta Tables: silver_sales, silver_customer, etc.)]
             brz_tables --> slv_notebook
             slv_notebook --> slv_tables
         end
 
-        subgraph 🥇 Gold Layer [Gold Lakehouse]
+        subgraph gold_layer ["🥇 Gold Layer [Gold Lakehouse]"]
             gld_notebook[PySpark Business Aggregation Notebook]
             gld_tables[(Dimensional Star Schema Models: fact_sales, dim_store, etc.)]
             slv_tables --> gld_notebook
@@ -37,14 +37,14 @@ flowchart TD
         end
     end
 
-    subgraph Analytics & Reporting
+    subgraph reporting ["Analytics & Reporting"]
         pbi_direct[Power BI Desktop / Services - DirectLake Mode]
         gld_tables --> pbi_direct
     end
 
-    style 🥉 Bronze Layer fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
-    style 🥈 Silver Layer fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px
-    style 🥇 Gold Layer fill:#d5e8d4,stroke:#82b366,stroke-width:2px
+    style bronze_layer fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
+    style silver_layer fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px
+    style gold_layer fill:#d5e8d4,stroke:#82b366,stroke-width:2px
 ```
 
 ---
