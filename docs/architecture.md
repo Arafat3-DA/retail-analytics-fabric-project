@@ -114,7 +114,7 @@ sequenceDiagram
 
     Note over Bronze, Silver: Stage 2: Quality Cleanse
     Spark->>Bronze: Read Bronze tables as Spark DataFrames
-    Spark->>Spark: Cast data types, standardise casings, drop tables, filter nulls
+    Spark->>Spark: Cast data types, standardise casings, drop columns, filter nulls
     Spark->>Silver: Write optimized silver_* Delta tables
 
     Note over Silver, Gold: Stage 3: Dimension Modeling

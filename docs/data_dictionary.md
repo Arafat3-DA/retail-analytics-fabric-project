@@ -215,7 +215,7 @@ This data dictionary defines the structure and metadata of both the **Silver (Cl
 
 | Column Name | Data Type | Key Type | Nullable | Description / Notes |
 |:---|:---|:---|:---|:---|
-| `OrderKey` | `long` | Composite PK / FK | No | Identifier for the order; references `dim_customer`, `dim_store` |
+| `OrderKey` | `long` | Composite PK | No | Unique transaction identifier for the order |
 | `LineNumber` | `integer` | Composite PK | No | Line item number within the specific order transaction |
 | `OrderDate` | `DATE` | FK | No | Date order was placed; references `dim_date` |
 | `DeliveryDate` | `DATE` | FK | Yes | Date order was fulfilled; references `dim_date` |
