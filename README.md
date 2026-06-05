@@ -104,18 +104,29 @@ Raw Files → 🥉 Bronze Layer → 🥈 Silver Layer → 🥇 Gold Layer → �
 retail-analytics-fabric-project/
 │
 ├── 📂 notebooks/               # Fabric notebook exports (.ipynb)
-│   └── silver_transformation.ipynb
+│   ├── silver_transformation.ipynb
+│   └── gold_aggregation.ipynb
 │
 ├── 📂 docs/                    # Architecture notes and transformation logic
 │   ├── architecture.md
 │   ├── bronze_to_silver.md
-│   └── data_dictionary.md
+│   ├── data_dictionary.md
+│   └── silver_to_gold.md
 │
 ├── 📂 screenshots/             # Progress screenshots from Fabric and Power BI
 │   ├── Lakehouse_bronze/
 │   │   └── Lakehouse_bronze.png
-│   └── Lakehouse_silver/
-│       └── Lakehouse_silver.png
+│   ├── Lakehouse_silver/
+│   │   └── Lakehouse_silver.png
+│   ├── Lakehouse_gold/
+│   │   └── Lakehouse_gold.png
+│   └── Notebooks/
+│       ├── Silver_transformation.png
+│       ├── Silver_transformation_1.png
+│       ├── Silver_transformation_2.png
+│       ├── Gold_transformation.png
+│       ├── Gold_transformation_1.png
+│       └── Gold_transformation_2.png
 │
 ├── LICENSE                     # MIT License
 └── README.md                   # This file
@@ -137,11 +148,12 @@ retail-analytics-fabric-project/
 - Write clean Delta tables to Lakehouse_Silver
 - Total: 59,114,388 rows — zero data loss
 
-### Silver → Gold 🔄 In Progress
-- Build star schema — fact_sales and dimension tables
-- Apply currency conversion — SalesAmount in USD
-- Pre-aggregate KPIs for Power BI Direct Lake mode
-- Write Gold tables to Lakehouse_Gold
+### Silver → Gold ✅ Complete
+- Build star schema: 1 fact table (`fact_sales`) + 4 dimension tables
+- Apply currency conversion: convert local currency sales metrics to USD (`SalesAmountUSD` and `GrossProfitUSD` computed by dividing by `ExchangeRate`)
+- No joins or pre-aggregations performed in Gold (all relationships and calculations managed via DAX in Power BI)
+- Write tables using `saveAsTable()` to the default `Lakehouse_Gold`
+- Total: 5 tables containing `25,406,390` rows across the dimensional model
 
 ### Gold → Power BI ⏳ Planned
 - Connect Power BI via Direct Lake mode
@@ -167,7 +179,7 @@ Planned dashboard pages:
 | Week | Focus | Status |
 |---|---|---|
 | Week 1 | Setup, GitHub, Bronze → Silver transformations | ✅ Complete |
-| Week 2 | Silver → Gold aggregations | 🔄 In Progress |
+| Week 2 | Silver → Gold aggregations | ✅ Complete |
 | Week 3 | Power BI dashboard development | ⏳ Planned |
 | Week 4 | Final testing, documentation, LinkedIn posts | ⏳ Planned |
 

@@ -30,7 +30,7 @@ flowchart TD
         end
 
         subgraph gold_layer ["🥇 Gold Layer [Gold Lakehouse]"]
-            gld_notebook[PySpark Business Aggregation Notebook]
+            gld_notebook[PySpark Gold Modeling Notebook]
             gld_tables[(Dimensional Star Schema Models: fact_sales, dim_store, etc.)]
             slv_tables --> gld_notebook
             gld_notebook --> gld_tables
@@ -69,13 +69,14 @@ flowchart TD
     *   Dropping of irrelevant transactional columns.
     *   Implementation of simple derived measures (e.g., standardizing transactional sales amount and gross profit).
 
-### 3. 🥇 Gold Layer (Aggregated Business Models)
-*   **Purpose:** Deliver business-ready aggregated models and star-schema frameworks (fact and dimension tables) ready for consumption.
+### 3. 🥇 Gold Layer (Star Schema Models)
+*   **Purpose:** Deliver business-ready star-schema models (fact and dimension tables) ready for consumption.
 *   **Data Format:** Highly-optimized Delta Lake tables.
 *   **Engineering Rules:**
-    *   Multi-currency translation to convert local sales amounts to standard base reporting currencies (e.g., USD) using exchange rates.
-    *   Integration of tables into standard Fact (`fact_sales`) and Dimension (`dim_customer`, `dim_product`, `dim_store`, `dim_date`) hierarchies.
-    *   Pre-aggregated KPI definitions at granular time, store, and product dimensions to ensure fast dashboard performance.
+    *   Multi-currency conversion: Calculate standard reporting values in USD (`SalesAmountUSD` and `GrossProfitUSD`) by dividing local currency values by `ExchangeRate` (e.g., `SalesAmount / ExchangeRate = SalesAmountUSD`).
+    *   Star schema structure: Model standard Fact (`fact_sales`) and 4 Dimension (`dim_customer`, `dim_product`, `dim_store`, `dim_date`) tables.
+    *   No joins between tables in Gold: Standard dimensional relationships are managed directly inside Power BI.
+    *   No pre-aggregated KPIs: All aggregations and KPI calculations are handled dynamically using DAX in Power BI.
 
 ### 4. 📊 Reporting Layer (Power BI Dashboards)
 *   **Purpose:** Deliver interactive, responsive dashboard interfaces for business intelligence stakeholders.
@@ -118,7 +119,7 @@ sequenceDiagram
 
     Note over Silver, Gold: Stage 3: Dimension Modeling
     Spark->>Silver: Read Silver tables
-    Spark->>Spark: Apply exchange rate currency conversion & join dimensions
+    Spark->>Spark: Apply currency conversion (divide by ExchangeRate) & select columns
     Spark->>Gold: Save Star-Schema dimensional fact/dim tables
 
     Note over Gold, PBI: Stage 4: Visualization
