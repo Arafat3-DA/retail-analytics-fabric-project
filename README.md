@@ -105,7 +105,7 @@ retail-analytics-fabric-project/
 │
 ├── 📂 notebooks/               # Fabric notebook exports (.ipynb)
 │   ├── silver_transformation.ipynb
-│   └── gold_aggregation.ipynb
+│   └── gold_modeling.ipynb
 │
 ├── 📂 docs/                    # Architecture notes and transformation logic
 │   ├── architecture.md
