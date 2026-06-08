@@ -113,6 +113,10 @@ retail-analytics-fabric-project/
 │   ├── data_dictionary.md
 │   └── silver_to_gold.md
 │
+├── 📂 Power BI Dashboard/      # Power BI Project (PBIP) files for version control
+│   ├── Retail_Analytics_Dashboard.pbip
+│   └── Retail_Analytics_Dashboard.Report/
+│
 ├── 📂 screenshots/             # Progress screenshots from Fabric and Power BI
 │   ├── Lakehouse_bronze/
 │   │   └── Lakehouse_bronze.png
@@ -120,13 +124,16 @@ retail-analytics-fabric-project/
 │   │   └── Lakehouse_silver.png
 │   ├── Lakehouse_gold/
 │   │   └── Lakehouse_gold.png
-│   └── Notebooks/
-│       ├── Silver_transformation.png
-│       ├── Silver_transformation_1.png
-│       ├── Silver_transformation_2.png
-│       ├── Gold_transformation.png
-│       ├── Gold_transformation_1.png
-│       └── Gold_transformation_2.png
+│   ├── Notebooks/
+│   │   ├── Silver_transformation.png
+│   │   ├── Silver_transformation_1.png
+│   │   ├── Silver_transformation_2.png
+│   │   ├── Gold_transformation.png
+│   │   ├── Gold_transformation_1.png
+│   │   └── Gold_transformation_2.png
+│   └── Power BI/
+│       ├── PBI_onelake_Connect.png
+│       └── PBI_relationships.png
 │
 ├── LICENSE                     # MIT License
 └── README.md                   # This file
@@ -155,10 +162,10 @@ retail-analytics-fabric-project/
 - Write tables using `saveAsTable()` to the default `Lakehouse_Gold`
 - Total: 5 tables containing `25,406,390` rows across the dimensional model
 
-### Gold → Power BI ⏳ Planned
-- Connect Power BI via Direct Lake mode
-- Build 5 dashboard pages
-- Implement DAX measures and Row Level Security
+### Gold → Power BI 🔄 In Progress
+- Connect Power BI via Direct Lake mode ✅ Complete
+- Build 5 dashboard pages 🔄 In Progress
+- Implement DAX measures and Row Level Security ⏳ Planned
 
 ---
 
@@ -180,7 +187,7 @@ Planned dashboard pages:
 |---|---|---|
 | Week 1 | Setup, GitHub, Bronze → Silver transformations | ✅ Complete |
 | Week 2 | Silver → Gold aggregations | ✅ Complete |
-| Week 3 | Power BI dashboard development | ⏳ Planned |
+| Week 3 | Power BI dashboard development | 🔄 In Progress |
 | Week 4 | Final testing, documentation, LinkedIn posts | ⏳ Planned |
 
 ---
