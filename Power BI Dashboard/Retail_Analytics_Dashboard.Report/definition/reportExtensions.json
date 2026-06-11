@@ -38,14 +38,154 @@
         {
           "name": "Total Stores",
           "dataType": "Double",
-          "expression": "DISTINCTCOUNT(fact_sales[StoreKey])",
-          "formatString": "General Number"
+          "expression": "DISTINCTCOUNT(fact_sales[StoreKey])"
         },
         {
           "name": "Total Products Sold",
           "dataType": "Double",
           "expression": "DISTINCTCOUNT(fact_sales[ProductKey])",
           "formatString": "0.00"
+        },
+        {
+          "name": "Gross profit Margin",
+          "dataType": "Double",
+          "expression": "DIVIDE([Gross Profit], [Total Sales])",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Gross Profit"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Average Order Value",
+          "dataType": "Double",
+          "expression": "DIVIDE([Total Sales], [Total Orders])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Orders"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Average Quantity per Order",
+          "dataType": "Double",
+          "expression": "DIVIDE([Total Quantity],[Total Orders])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Quantity"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Orders"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Revenue per Customer",
+          "dataType": "Double",
+          "expression": "DIVIDE([Total Sales], [Total Customers])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Customers"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Revenue per Store",
+          "dataType": "Double",
+          "expression": "DIVIDE([Total Sales], [Total Stores])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Stores"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Gross Profit per Customer",
+          "dataType": "Double",
+          "expression": "DIVIDE([Gross Profit], [Total Customers])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Gross Profit"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Customers"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Cost of Sales",
+          "dataType": "Double",
+          "expression": "SUMX(fact_sales, fact_sales[Quantity] * fact_sales[UnitCost])",
+          "formatString": "0.00"
+        },
+        {
+          "name": "Sales MTD",
+          "dataType": "Double",
+          "expression": "TOTALMTD([Total Sales],dim_date[Date])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              }
+            ]
+          }
         }
       ]
     }

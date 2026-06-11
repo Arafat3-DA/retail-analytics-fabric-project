@@ -3,10 +3,10 @@
   "name": "20968bf116762775eaca",
   "position": {
     "x": 58.695963697157872,
-    "y": 266.57750179125867,
+    "y": 243.34368282780034,
     "z": 1,
-    "height": 234.78385478863149,
-    "width": 1221.6097444470981
+    "height": 202.99020778600431,
+    "width": 963.59207069500837
   },
   "visual": {
     "visualType": "cardVisual",
@@ -58,6 +58,36 @@
               },
               "queryRef": "Measures_.Total Products Sold",
               "nativeQueryRef": "Total Products Sold"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Gross profit Margin"
+                }
+              },
+              "queryRef": "Measures_.Gross profit Margin",
+              "nativeQueryRef": "Gross profit Margin"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Average Order Value"
+                }
+              },
+              "queryRef": "Measures_.Average Order Value",
+              "nativeQueryRef": "Average Order Value"
             }
           ]
         }
