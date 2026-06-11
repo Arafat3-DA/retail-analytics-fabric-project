@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 842.10284574846514,
-            "y": 13.046542002843506
+            "x": 872.124767570955,
+            "y": 453.89476244888107
           },
           "nodeIndex": "dim_customer",
           "nodeLineageTag": "c662ffe9-0171-4227-817e-9fb41f59cde4",
@@ -19,12 +19,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
-            "x": 815.93604517060487,
-            "y": 513.5328732794344
+            "x": 893.36100144965815,
+            "y": 63.204045942084235
           },
           "nodeIndex": "dim_date",
           "nodeLineageTag": "0a221c16-b81a-498c-b6ab-720fa3576e6d",
@@ -32,12 +32,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 115.95502149833158,
-            "y": 504.18191337152018
+            "x": 103.31421230991475,
+            "y": 459.93908121206124
           },
           "nodeIndex": "dim_product",
           "nodeLineageTag": "785d3921-63cb-4dad-ac7a-4c0f1e161522",
@@ -45,12 +45,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
-            "x": 125.84485513050106,
-            "y": 27.151624970902787
+            "x": 121.10455168484478,
+            "y": 14.510815782485963
           },
           "nodeIndex": "dim_store",
           "nodeLineageTag": "626124ae-15ce-4883-bfb3-fa384a3439bf",
@@ -58,12 +58,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
         },
         {
           "location": {
-            "x": 482.63624837768009,
-            "y": 268.96801600537623
+            "x": 477.89594493202384,
+            "y": 259.48740911406355
           },
           "nodeIndex": "fact_sales",
           "nodeLineageTag": "1f19ce66-5a20-4801-8d1f-bb4ff8701043",
@@ -71,7 +71,21 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1278.3557927631343,
+            "y": 104.10360970907394
+          },
+          "nodeIndex": "Measures_",
+          "nodeLineageTag": "5c6b333c-741f-4769-bf73-29443d0eaaeb",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 6,
+          "expandedHeight": 104
         }
       ],
       "name": "All tables",

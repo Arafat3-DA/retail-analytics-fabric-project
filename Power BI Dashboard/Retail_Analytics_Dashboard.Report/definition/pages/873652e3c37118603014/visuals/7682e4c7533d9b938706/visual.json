@@ -35,22 +35,18 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "fact_sales"
-                        }
-                      },
-                      "Property": "SalesAmountUSD"
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
                     }
                   },
-                  "Function": 0
+                  "Property": "Total Sales"
                 }
               },
-              "queryRef": "Sum(fact_sales.SalesAmountUSD)",
-              "nativeQueryRef": "Sum of SalesAmountUSD"
+              "queryRef": "Measures_.Total Sales",
+              "nativeQueryRef": "Total Sales"
             }
           ]
         }
@@ -59,18 +55,14 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "fact_sales"
-                      }
-                    },
-                    "Property": "SalesAmountUSD"
+                  "SourceRef": {
+                    "Schema": "extension",
+                    "Entity": "Measures_"
                   }
                 },
-                "Function": 0
+                "Property": "Total Sales"
               }
             },
             "direction": "Descending"
@@ -80,28 +72,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5e55d0f83b08e857eca6",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "fact_sales"
-                  }
-                },
-                "Property": "SalesAmountUSD"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

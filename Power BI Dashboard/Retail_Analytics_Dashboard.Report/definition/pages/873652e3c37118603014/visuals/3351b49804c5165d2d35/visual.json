@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "3351b49804c5165d2d35",
   "position": {
-    "x": 786.28134702651062,
-    "y": 242.12085025077621,
+    "x": 774.93975903614455,
+    "y": 212.04819277108433,
     "z": 1,
-    "height": 284.91999044662049,
-    "width": 451.22522092190115
+    "height": 285.30120481927707,
+    "width": 451.08433734939757
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -35,22 +35,18 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "fact_sales"
-                        }
-                      },
-                      "Property": "SalesAmountUSD"
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
                     }
                   },
-                  "Function": 0
+                  "Property": "Total Sales"
                 }
               },
-              "queryRef": "Sum(fact_sales.SalesAmountUSD)",
-              "nativeQueryRef": "Sum of SalesAmountUSD"
+              "queryRef": "Measures_.Total Sales",
+              "nativeQueryRef": "Total Sales"
             }
           ]
         }
@@ -59,18 +55,14 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "fact_sales"
-                      }
-                    },
-                    "Property": "SalesAmountUSD"
+                  "SourceRef": {
+                    "Schema": "extension",
+                    "Entity": "Measures_"
                   }
                 },
-                "Function": 0
+                "Property": "Total Sales"
               }
             },
             "direction": "Descending"

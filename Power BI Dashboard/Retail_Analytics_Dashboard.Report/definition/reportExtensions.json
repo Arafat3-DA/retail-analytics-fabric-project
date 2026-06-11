@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "Measures_",
+      "measures": [
+        {
+          "name": "Total Sales",
+          "dataType": "Double",
+          "expression": "SUM(fact_sales[SalesAmountUSD])",
+          "formatString": "General Number"
+        }
+      ]
+    }
+  ]
+}
