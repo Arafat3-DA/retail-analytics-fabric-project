@@ -9,7 +9,43 @@
           "name": "Total Sales",
           "dataType": "Double",
           "expression": "SUM(fact_sales[SalesAmountUSD])",
+          "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00"
+        },
+        {
+          "name": "Gross Profit",
+          "dataType": "Double",
+          "expression": "SUM(fact_sales[GrossProfitUSD])",
+          "formatString": "0.00"
+        },
+        {
+          "name": "Total Quantity",
+          "dataType": "Double",
+          "expression": "SUM(fact_sales[Quantity])",
+          "formatString": "0.00"
+        },
+        {
+          "name": "Total Orders",
+          "dataType": "Double",
+          "expression": "DISTINCTCOUNT(fact_sales[OrderKey])",
+          "formatString": "0.00"
+        },
+        {
+          "name": "Total Customers",
+          "dataType": "Double",
+          "expression": "DISTINCTCOUNT(fact_sales[CustomerKey])",
+          "formatString": "0.00"
+        },
+        {
+          "name": "Total Stores",
+          "dataType": "Double",
+          "expression": "DISTINCTCOUNT(fact_sales[StoreKey])",
           "formatString": "General Number"
+        },
+        {
+          "name": "Total Products Sold",
+          "dataType": "Double",
+          "expression": "DISTINCTCOUNT(fact_sales[ProductKey])",
+          "formatString": "0.00"
         }
       ]
     }

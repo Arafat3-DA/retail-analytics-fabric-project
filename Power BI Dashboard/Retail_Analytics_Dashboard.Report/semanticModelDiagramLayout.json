@@ -81,11 +81,10 @@
           "nodeIndex": "Measures_",
           "nodeLineageTag": "5c6b333c-741f-4769-bf73-29443d0eaaeb",
           "size": {
-            "height": 72,
+            "height": 104,
             "width": 234
           },
-          "zIndex": 6,
-          "expandedHeight": 104
+          "zIndex": 6
         }
       ],
       "name": "All tables",
