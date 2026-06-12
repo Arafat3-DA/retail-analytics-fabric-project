@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "c48a431c05509bd8a008",
+  "name": "c0b6a29991d59eb47dca",
   "position": {
-    "x": 58.695963697157872,
-    "y": 0,
+    "x": 0,
+    "y": 13.451158347265345,
     "z": 0,
-    "height": 234.78385478863149,
-    "width": 1221.6097444470981
+    "height": 202.99020778600431,
+    "width": 1280.305708144256
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,86 +23,71 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Total Sales"
-                }
-              },
-              "queryRef": "Measures_.Total Sales",
-              "nativeQueryRef": "Total Sales"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
-                  "Property": "Total Quantity Sold"
-                }
-              },
-              "queryRef": "Measures_.Total Quantity",
-              "nativeQueryRef": "Total Quantity"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
-                  "Property": "Gross Profit"
-                }
-              },
-              "queryRef": "Measures_.Gross Profit",
-              "nativeQueryRef": "Gross Profit"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
-                  "Property": "Total Orders"
-                }
-              },
-              "queryRef": "Measures_.Total Orders",
-              "nativeQueryRef": "Total Orders"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
-                  "Property": "Cost of Sales"
-                }
-              },
-              "queryRef": "Measures_.Cost of Sales",
-              "nativeQueryRef": "Cost of Sales"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
                   "Property": "Sales MTD"
                 }
               },
               "queryRef": "Measures_.Sales MTD",
               "nativeQueryRef": "Sales MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Sales QTD"
+                }
+              },
+              "queryRef": "Measures_.Sales QTD",
+              "nativeQueryRef": "Sales QTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Sales YTD"
+                }
+              },
+              "queryRef": "Measures_.Sales YTD",
+              "nativeQueryRef": "Sales YTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Gross Profit MTD"
+                }
+              },
+              "queryRef": "Measures_.Gross Profit MTD",
+              "nativeQueryRef": "Gross Profit MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Gross Profit YTD"
+                }
+              },
+              "queryRef": "Measures_.Gross Profit YTD",
+              "nativeQueryRef": "Gross Profit YTD"
             }
           ]
         }
@@ -118,7 +103,7 @@
                     "Entity": "Measures_"
                   }
                 },
-                "Property": "Total Sales"
+                "Property": "Sales MTD"
               }
             },
             "direction": "Descending"
@@ -144,38 +129,6 @@
           }
         }
       ],
-      "accentBar": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Measures_.Total Sales"
-          }
-        }
-      ],
-      "shadowCustom": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Measures_.Total Sales"
-          }
-        }
-      ],
       "layout": [
         {
           "properties": {
@@ -183,6 +136,70 @@
               "expr": {
                 "Literal": {
                   "Value": "'Table'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

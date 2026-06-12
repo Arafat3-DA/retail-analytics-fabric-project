@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "77a7eb1453b00c0ed0ea",
+  "position": {
+    "x": 256.7948411750657,
+    "y": 271.46883209935515,
+    "z": 0,
+    "height": 360.73561022211607,
+    "width": 634.65010747551946,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Sales MTD"
+                }
+              },
+              "queryRef": "Measures_.Sales MTD",
+              "nativeQueryRef": "Sales MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Sales LMTD"
+                }
+              },
+              "queryRef": "Measures_.Sales LMTD",
+              "nativeQueryRef": "Sales LMTD"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -18,7 +18,7 @@
           "formatString": "0.00"
         },
         {
-          "name": "Total Quantity",
+          "name": "Total Quantity Sold",
           "dataType": "Double",
           "expression": "SUM(fact_sales[Quantity])",
           "formatString": "0.00"
@@ -89,14 +89,14 @@
         {
           "name": "Average Quantity per Order",
           "dataType": "Double",
-          "expression": "DIVIDE([Total Quantity],[Total Orders])",
+          "expression": "DIVIDE([Total Quantity Sold],[Total Orders])",
           "formatString": "0.00",
           "references": {
             "measures": [
               {
                 "schema": "extension",
                 "entity": "Measures_",
-                "name": "Total Quantity"
+                "name": "Total Quantity Sold"
               },
               {
                 "schema": "extension",
@@ -183,6 +183,156 @@
                 "schema": "extension",
                 "entity": "Measures_",
                 "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sales QTD",
+          "dataType": "Double",
+          "expression": "TOTALQTD([Total Sales], dim_date[Date])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sales YTD",
+          "dataType": "Double",
+          "expression": "TOTALYTD([Total Sales], dim_date[Date])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Gross Profit MTD",
+          "dataType": "Double",
+          "expression": "TOTALMTD([Gross Profit], dim_date[Date])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Gross Profit"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Gross Profit YTD",
+          "dataType": "Double",
+          "expression": "TOTALYTD([Gross Profit], dim_date[Date])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Gross Profit"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Total Sales LY",
+          "dataType": "Double",
+          "expression": "CALCULATE([Total Sales], \r\n                   SAMEPERIODLASTYEAR(dim_date[Date]))",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Total Gross Profit LY",
+          "dataType": "Double",
+          "expression": "CALCULATE([Gross Profit],\n                        SAMEPERIODLASTYEAR(dim_date[Date]))",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Gross Profit"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Total Orders LY",
+          "dataType": "Double",
+          "expression": "CALCULATE([Total Orders],\n                  SAMEPERIODLASTYEAR(dim_date[Date]))",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Orders"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Total Quantity Sold LY",
+          "dataType": "Double",
+          "expression": "CALCULATE([Total Quantity Sold],\r\n                         SAMEPERIODLASTYEAR(dim_date[Date]))",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Quantity Sold"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sales LYTD",
+          "dataType": "Double",
+          "expression": "CALCULATE([Sales YTD],\r\n             SAMEPERIODLASTYEAR(dim_date[Date]))",
+          "formatString": "General Number",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Sales YTD"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sales LMTD",
+          "dataType": "Double",
+          "expression": "CALCULATE([Sales MTD],\r\n             DATEADD(dim_date[Date],-1,MONTH))",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Sales MTD"
               }
             ]
           }
