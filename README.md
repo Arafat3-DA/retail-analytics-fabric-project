@@ -118,11 +118,9 @@ retail-analytics-fabric-project/
 │   └── Retail_Analytics_Dashboard.Report/
 │
 ├── 📂 screenshots/             # Progress screenshots from Fabric and Power BI
-│   ├── Lakehouse_bronze/
-│   │   └── Lakehouse_bronze.png
-│   ├── Lakehouse_silver/
-│   │   └── Lakehouse_silver.png
-│   ├── Lakehouse_gold/
+│   ├── Lakehouse/
+│   │   ├── Lakehouse_bronze.png
+│   │   ├── Lakehouse_silver.png
 │   │   └── Lakehouse_gold.png
 │   ├── Notebooks/
 │   │   ├── Silver_transformation.png
