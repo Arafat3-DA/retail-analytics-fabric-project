@@ -5,7 +5,7 @@
     "x": 0,
     "y": 13.451158347265345,
     "z": 0,
-    "height": 202.99020778600431,
+    "height": 130.84308574158109,
     "width": 1280.305708144256
   },
   "visual": {
@@ -88,6 +88,21 @@
               },
               "queryRef": "Measures_.Gross Profit YTD",
               "nativeQueryRef": "Gross Profit YTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Gross Profit YoY %"
+                }
+              },
+              "queryRef": "Measures_.Gross Profit YoY %",
+              "nativeQueryRef": "Gross Profit YoY %"
             }
           ]
         }

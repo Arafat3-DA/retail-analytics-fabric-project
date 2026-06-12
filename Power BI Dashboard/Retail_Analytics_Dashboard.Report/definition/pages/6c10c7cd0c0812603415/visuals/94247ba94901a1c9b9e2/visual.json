@@ -3,9 +3,9 @@
   "name": "94247ba94901a1c9b9e2",
   "position": {
     "x": 0,
-    "y": 216.44136613326964,
+    "y": 144.29424408884643,
     "z": 2,
-    "height": 202.99020778600431,
+    "height": 134.51158347265346,
     "width": 1280.305708144256
   },
   "visual": {
@@ -88,6 +88,21 @@
               },
               "queryRef": "Measures_.Sales MTD",
               "nativeQueryRef": "Sales MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Sales YoY %"
+                }
+              },
+              "queryRef": "Measures_.Sales YoY %",
+              "nativeQueryRef": "Sales YoY %"
             }
           ]
         }

@@ -38,7 +38,8 @@
         {
           "name": "Total Stores",
           "dataType": "Double",
-          "expression": "DISTINCTCOUNT(fact_sales[StoreKey])"
+          "expression": "DISTINCTCOUNT(fact_sales[StoreKey])",
+          "formatString": "0"
         },
         {
           "name": "Total Products Sold",
@@ -47,7 +48,7 @@
           "formatString": "0.00"
         },
         {
-          "name": "Gross profit Margin",
+          "name": "Gross Profit Margin",
           "dataType": "Double",
           "expression": "DIVIDE([Gross Profit], [Total Sales])",
           "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
@@ -250,7 +251,7 @@
         {
           "name": "Total Sales LY",
           "dataType": "Double",
-          "expression": "CALCULATE([Total Sales], \r\n                   SAMEPERIODLASTYEAR(dim_date[Date]))",
+          "expression": "CALCULATE([Total Sales], \n                   SAMEPERIODLASTYEAR(dim_date[Date]))",
           "formatString": "0.00",
           "references": {
             "measures": [
@@ -311,7 +312,6 @@
           "name": "Sales LYTD",
           "dataType": "Double",
           "expression": "CALCULATE([Sales YTD],\r\n             SAMEPERIODLASTYEAR(dim_date[Date]))",
-          "formatString": "General Number",
           "references": {
             "measures": [
               {
@@ -333,6 +333,182 @@
                 "schema": "extension",
                 "entity": "Measures_",
                 "name": "Sales MTD"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sales YoY %",
+          "dataType": "Double",
+          "expression": "\nDIVIDE([Total Sales] - [Total Sales LY], [Total Sales LY])",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales LY"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Gross Profit YoY %",
+          "dataType": "Double",
+          "expression": "\nDIVIDE([Gross Profit] - [Total Gross Profit LY], [Total Gross Profit LY])",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Gross Profit"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Gross Profit LY"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orders YoY %",
+          "dataType": "Double",
+          "expression": "\nDIVIDE([Total Orders] - [Total Orders LY], [Total Orders LY])",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Orders"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Orders LY"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Quantity YoY %",
+          "dataType": "Double",
+          "expression": "\nDIVIDE([Total Quantity Sold] - [Total Quantity Sold LY], [Total Quantity Sold LY])",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Quantity Sold"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Quantity Sold LY"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sales YTD vs LY %",
+          "dataType": "Double",
+          "expression": "\nDIVIDE([Sales YTD] - [Sales LYTD], [Sales LYTD])",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Sales YTD"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Sales LYTD"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sales Variance LY",
+          "dataType": "Double",
+          "expression": "\n[Total Sales] - [Total Sales LY]",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales LY"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Product Sales Rank",
+          "dataType": "Double",
+          "expression": "\nRANKX(\n    ALL(dim_product[ProductName]),\n    [Total Sales],\n    ,\n    DESC,\n    DENSE\n)",
+          "formatString": "General Number",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Store Sales Rank",
+          "dataType": "Double",
+          "expression": "\nRANKX(ALL(dim_store[Description]), [Total Sales],,DESC,Dense)",
+          "formatString": "General Number",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Avg Customer Age",
+          "dataType": "Double",
+          "expression": "\nAVERAGE(dim_customer[Age])",
+          "formatString": "0.00"
+        },
+        {
+          "name": "Orders per Customer",
+          "dataType": "Double",
+          "expression": "\nDIVIDE([Total Orders], [Total Customers])",
+          "formatString": "0.00",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Orders"
+              },
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Customers"
               }
             ]
           }
