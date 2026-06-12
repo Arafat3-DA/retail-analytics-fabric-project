@@ -165,7 +165,8 @@ retail-analytics-fabric-project/
 ### Gold → Power BI 🔄 In Progress
 - Connect Power BI via Direct Lake mode ✅ Complete
 - Build 5 dashboard pages 🔄 In Progress
-- Implement DAX measures and Row Level Security ⏳ Planned
+- Implement DAX measures 🔄 In Progress
+- Implement Row Level Security ⏳ Planned
 
 ---
 
