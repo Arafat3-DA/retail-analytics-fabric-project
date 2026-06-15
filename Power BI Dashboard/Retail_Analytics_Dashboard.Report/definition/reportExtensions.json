@@ -461,7 +461,6 @@
           "name": "Product Sales Rank",
           "dataType": "Double",
           "expression": "\nRANKX(\n    ALL(dim_product[ProductName]),\n    [Total Sales],\n    ,\n    DESC,\n    DENSE\n)",
-          "formatString": "General Number",
           "references": {
             "measures": [
               {
@@ -476,7 +475,6 @@
           "name": "Store Sales Rank",
           "dataType": "Double",
           "expression": "\nRANKX(ALL(dim_store[Description]), [Total Sales],,DESC,Dense)",
-          "formatString": "General Number",
           "references": {
             "measures": [
               {
