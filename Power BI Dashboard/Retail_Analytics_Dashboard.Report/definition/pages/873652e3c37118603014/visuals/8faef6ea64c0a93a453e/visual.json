@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "8faef6ea64c0a93a453e",
   "position": {
     "x": 37.972491518928052,
     "y": 17.260223417694569,
-    "z": 3,
+    "z": 3000,
     "height": 67.31487132900881,
     "width": 452.2178535435977,
-    "tabOrder": 1
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "textbox",
@@ -22,8 +22,9 @@
                     "value": "Executive Summary",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontFamily": "DIN",
-                      "fontSize": "28pt"
+                      "fontFamily": "Arial",
+                      "fontSize": "28pt",
+                      "color": "#ffffff"
                     }
                   }
                 ]
@@ -35,6 +36,19 @@
     },
     "visualContainerObjects": {
       "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
         {
           "properties": {
             "show": {
