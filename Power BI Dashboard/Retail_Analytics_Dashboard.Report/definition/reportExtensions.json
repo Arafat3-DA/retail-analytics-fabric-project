@@ -170,8 +170,8 @@
         {
           "name": "Cost of Sales",
           "dataType": "Double",
-          "expression": "SUMX(fact_sales, fact_sales[Quantity] * fact_sales[UnitCost])",
-          "formatString": "0.00"
+          "expression": "SUMX(fact_sales, fact_sales[Quantity] * fact_sales[UnitCost] / fact_sales[ExchangeRate])",
+          "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00"
         },
         {
           "name": "Sales MTD",

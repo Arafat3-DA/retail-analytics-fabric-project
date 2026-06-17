@@ -1,15 +1,15 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "3351b49804c5165d2d35",
+  "name": "079784a93301e299e9b8",
   "position": {
-    "x": 671.42269094831863,
+    "x": 1272.0784658840896,
     "y": 265.80744063249637,
-    "z": 1,
+    "z": 4,
     "height": 336.57435664504408,
     "width": 522.98476955614535
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
         "Category": {
@@ -19,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_product"
+                      "Entity": "dim_date"
                     }
                   },
-                  "Property": "Brand"
+                  "Property": "Year"
                 }
               },
-              "queryRef": "dim_product.Brand",
-              "nativeQueryRef": "Brand",
+              "queryRef": "dim_date.Year",
+              "nativeQueryRef": "Year",
               "active": true
             }
           ]

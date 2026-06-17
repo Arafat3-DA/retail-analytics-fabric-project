@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "532ff3af0d7ba7e75255",
   "position": {
     "x": 37.972491518928052,
     "y": 84.575094746703385,
     "z": 2,
-    "height": 136.35576499978708,
+    "height": 144.98587670863438,
     "width": 1822.6795929085463
   },
   "visual": {
@@ -68,21 +68,6 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Total Orders"
-                }
-              },
-              "queryRef": "Measures_.Total Orders",
-              "nativeQueryRef": "Total Orders"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
                   "Property": "Cost of Sales"
                 }
               },
@@ -98,11 +83,41 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Sales MTD"
+                  "Property": "Total Orders"
                 }
               },
-              "queryRef": "Measures_.Sales MTD",
-              "nativeQueryRef": "Sales MTD"
+              "queryRef": "Measures_.Total Orders",
+              "nativeQueryRef": "Total Orders"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Gross Profit Margin"
+                }
+              },
+              "queryRef": "Measures_.Gross Profit Margin",
+              "nativeQueryRef": "Gross Profit Margin"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Gross Profit per Customer"
+                }
+              },
+              "queryRef": "Measures_.Gross Profit per Customer",
+              "nativeQueryRef": "Gross Profit per Customer"
             }
           ]
         }

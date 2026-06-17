@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "77a7eb1453b00c0ed0ea",
   "position": {
-    "x": 256.7948411750657,
-    "y": 271.46883209935515,
+    "x": 233.56102221160737,
+    "y": 284.91999044662049,
     "z": 0,
     "height": 360.73561022211607,
     "width": 634.65010747551946,
@@ -17,33 +17,36 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
+                      "Entity": "fact_sales"
                     }
                   },
-                  "Property": "Sales MTD"
+                  "Property": "OrderKey"
                 }
               },
-              "queryRef": "Measures_.Sales MTD",
-              "nativeQueryRef": "Sales MTD"
+              "queryRef": "CountNonNull(fact_sales.OrderKey)",
+              "nativeQueryRef": "OrderKey"
             },
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_sales"
+                        }
+                      },
+                      "Property": "SalesAmountUSD"
                     }
                   },
-                  "Property": "Sales LMTD"
+                  "Function": 0
                 }
               },
-              "queryRef": "Measures_.Sales LMTD",
-              "nativeQueryRef": "Sales LMTD"
+              "queryRef": "Sum(fact_sales.SalesAmountUSD)",
+              "nativeQueryRef": "Sum of SalesAmountUSD"
             }
           ]
         }
