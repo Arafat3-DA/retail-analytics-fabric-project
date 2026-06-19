@@ -65,6 +65,11 @@
       "type": "RegisteredResources",
       "items": [
         {
+          "name": "clear-alt9428757872325045.png",
+          "path": "clear-alt9428757872325045.png",
+          "type": "Image"
+        },
+        {
           "name": "Custom_Theme8021834051270927.json",
           "path": "Custom_Theme8021834051270927.json",
           "type": "CustomTheme"
