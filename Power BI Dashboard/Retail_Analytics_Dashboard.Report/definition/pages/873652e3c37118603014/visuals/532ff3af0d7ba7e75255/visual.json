@@ -39,11 +39,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Total Quantity Sold"
+                  "Property": "Sales YoY %"
                 }
               },
-              "queryRef": "Measures_.Total Quantity",
-              "nativeQueryRef": "Total Quantity"
+              "queryRef": "Measures_.Sales YoY %",
+              "nativeQueryRef": "Sales YoY %"
             },
             {
               "field": {
@@ -114,11 +114,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Gross Profit per Customer"
+                  "Property": "Average Order Value"
                 }
               },
-              "queryRef": "Measures_.Gross Profit per Customer",
-              "nativeQueryRef": "Gross Profit per Customer"
+              "queryRef": "Measures_.Average Order Value",
+              "nativeQueryRef": "Average Order Value"
             }
           ]
         }

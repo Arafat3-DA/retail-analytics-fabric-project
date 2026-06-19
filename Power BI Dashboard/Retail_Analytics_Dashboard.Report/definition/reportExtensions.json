@@ -71,7 +71,7 @@
           "name": "Average Order Value",
           "dataType": "Double",
           "expression": "DIVIDE([Total Sales], [Total Orders])",
-          "formatString": "0.00",
+          "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
           "references": {
             "measures": [
               {
