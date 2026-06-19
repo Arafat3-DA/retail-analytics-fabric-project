@@ -15,7 +15,7 @@
           "name": "Gross Profit",
           "dataType": "Double",
           "expression": "SUM(fact_sales[GrossProfitUSD])",
-          "formatString": "0.00"
+          "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00"
         },
         {
           "name": "Total Quantity Sold",
@@ -151,7 +151,7 @@
           "name": "Gross Profit per Customer",
           "dataType": "Double",
           "expression": "DIVIDE([Gross Profit], [Total Customers])",
-          "formatString": "0.00",
+          "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
           "references": {
             "measures": [
               {
