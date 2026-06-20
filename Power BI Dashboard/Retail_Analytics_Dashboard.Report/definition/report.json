@@ -65,6 +65,21 @@
       "type": "RegisteredResources",
       "items": [
         {
+          "name": "benefit-porcent46124167599688715.png",
+          "path": "benefit-porcent46124167599688715.png",
+          "type": "Image"
+        },
+        {
+          "name": "calculator-bill30789607243494577.png",
+          "path": "calculator-bill30789607243494577.png",
+          "type": "Image"
+        },
+        {
+          "name": "checklist6684362120385364.png",
+          "path": "checklist6684362120385364.png",
+          "type": "Image"
+        },
+        {
           "name": "clear-alt9428757872325045.png",
           "path": "clear-alt9428757872325045.png",
           "type": "Image"
@@ -73,6 +88,31 @@
           "name": "Custom_Theme8021834051270927.json",
           "path": "Custom_Theme8021834051270927.json",
           "type": "CustomTheme"
+        },
+        {
+          "name": "growth-chart-invest954275871041969.png",
+          "path": "growth-chart-invest954275871041969.png",
+          "type": "Image"
+        },
+        {
+          "name": "order-history46445145371555274.png",
+          "path": "order-history46445145371555274.png",
+          "type": "Image"
+        },
+        {
+          "name": "revenue-alt4931887934726098.png",
+          "path": "revenue-alt4931887934726098.png",
+          "type": "Image"
+        },
+        {
+          "name": "usd-circle3870162675503742.png",
+          "path": "usd-circle3870162675503742.png",
+          "type": "Image"
+        },
+        {
+          "name": "usd-circle8244997066790144.png",
+          "path": "usd-circle8244997066790144.png",
+          "type": "Image"
         }
       ]
     }
@@ -83,6 +123,7 @@
     "defaultDrillFilterOtherVisuals": true,
     "allowChangeFilterTypes": true,
     "useEnhancedTooltips": true,
+    "filterPaneHiddenInEditMode": true,
     "useDefaultAggregateDisplayName": true
   }
 }
