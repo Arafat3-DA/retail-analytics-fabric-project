@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "77a7eb1453b00c0ed0ea",
   "position": {
-    "x": 233.56102221160737,
-    "y": 284.91999044662049,
+    "x": 236.46236418379368,
+    "y": 264.2104987563817,
     "z": 0,
-    "height": 360.73561022211607,
-    "width": 634.65010747551946,
+    "height": 365.55151197800757,
+    "width": 649.06506087184187,
     "tabOrder": 0
   },
   "visual": {
@@ -20,37 +20,120 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_sales"
+                      "Entity": "dim_date"
                     }
                   },
-                  "Property": "OrderKey"
+                  "Property": "MonthShort"
                 }
               },
-              "queryRef": "CountNonNull(fact_sales.OrderKey)",
-              "nativeQueryRef": "OrderKey"
+              "queryRef": "dim_date.MonthShort",
+              "nativeQueryRef": "Month",
+              "displayName": "Month"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "fact_sales"
-                        }
-                      },
-                      "Property": "SalesAmountUSD"
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
                     }
                   },
-                  "Function": 0
+                  "Property": "Sales YTD"
                 }
               },
-              "queryRef": "Sum(fact_sales.SalesAmountUSD)",
-              "nativeQueryRef": "Sum of SalesAmountUSD"
+              "queryRef": "Measures_.Sales YTD",
+              "nativeQueryRef": "Sales YTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Sales LYTD"
+                }
+              },
+              "queryRef": "Measures_.Sales LYTD",
+              "nativeQueryRef": "Sales LYTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Sales MTD"
+                }
+              },
+              "queryRef": "Measures_.Sales MTD",
+              "nativeQueryRef": "Sales MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Sales LMTD"
+                }
+              },
+              "queryRef": "Measures_.Sales LMTD",
+              "nativeQueryRef": "Sales LMTD"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Schema": "extension",
+                    "Entity": "Measures_"
+                  }
+                },
+                "Property": "Sales YTD"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "70.50949748314488D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dim_date.MonthShort"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ff84f544dd27060142c3",
+  "displayName": "Sales Trends",
+  "displayOption": "FitToPage",
+  "height": 1000,
+  "width": 1900,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#3E1E1E'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "dbb53c56a3de74b8095d",
+      "target": "c110afaf1b8dd7099019",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3ae3fc583d4097e28d2e",
+      "target": "c110afaf1b8dd7099019",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dbb53c56a3de74b8095d",
+      "target": "0f368e185cc1620abab9",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3ae3fc583d4097e28d2e",
+      "target": "0f368e185cc1620abab9",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3ae3fc583d4097e28d2e",
+      "target": "baa31d288b22163cb125",
+      "type": "DataFilter"
+    },
+    {
+      "source": "3ae3fc583d4097e28d2e",
+      "target": "2dc5faf70e04a5354870",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3ae3fc583d4097e28d2e",
+      "target": "2223667dd34e8d458e2d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dbb53c56a3de74b8095d",
+      "target": "2dc5faf70e04a5354870",
+      "type": "NoFilter"
+    }
+  ]
+}

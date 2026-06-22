@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "d4a601b769260c548a62",
+  "name": "baa31d288b22163cb125",
   "position": {
-    "x": 866.0053948363709,
-    "y": 609.15409536586412,
-    "z": 12000,
-    "height": 364.451168167611,
-    "width": 548.41223400459558,
-    "tabOrder": 6000
+    "x": 1282.521015599355,
+    "y": 251.64485421096953,
+    "z": 10000,
+    "height": 336.68346011674544,
+    "width": 574.4444603022821,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -23,12 +23,13 @@
                       "Entity": "dim_date"
                     }
                   },
-                  "Property": "Year"
+                  "Property": "MonthShort"
                 }
               },
-              "queryRef": "dim_date.Year",
-              "nativeQueryRef": "Year",
-              "active": true
+              "queryRef": "dim_date.MonthShort",
+              "nativeQueryRef": "Month",
+              "active": true,
+              "displayName": "Month"
             }
           ]
         },
@@ -43,11 +44,12 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Sales YTD"
+                  "Property": "Orders YTD"
                 }
               },
-              "queryRef": "Measures_.Sales YTD",
-              "nativeQueryRef": "Sales YTD"
+              "queryRef": "Measures_.Orders YTD",
+              "nativeQueryRef": "Total Orders YTD",
+              "displayName": "Total Orders YTD"
             },
             {
               "field": {
@@ -58,11 +60,12 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Sales LYTD"
+                  "Property": "Orders LYTD"
                 }
               },
-              "queryRef": "Measures_.Sales LYTD",
-              "nativeQueryRef": "Sales LYTD"
+              "queryRef": "Measures_.Orders LYTD",
+              "nativeQueryRef": "Total Orders LYTD",
+              "displayName": "Total Orders LYTD"
             }
           ]
         }
@@ -78,13 +81,12 @@
                     "Entity": "Measures_"
                   }
                 },
-                "Property": "Sales YTD"
+                "Property": "Orders YTD"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
@@ -109,6 +111,13 @@
               "expr": {
                 "Literal": {
                   "Value": "25L"
+                }
+              }
+            },
+            "switchAxisPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             },
@@ -144,13 +153,6 @@
               "expr": {
                 "Literal": {
                   "Value": "22L"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }
@@ -743,420 +745,6 @@
               }
             ]
           }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Aug'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Dec'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#1ec9af'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Jan'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#1ec9af'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Jul'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Mar'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Nov'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Sep'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Jun'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Oct'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Apr'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
         }
       ],
       "labels": [
@@ -1166,6 +754,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "labelOverflow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             },
@@ -1210,95 +805,6 @@
                   "Value": "'SingleLine'"
                 }
               }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1000000D"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "11D"
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "labelOrientation": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "labelPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Auto'"
-                }
-              }
-            },
-            "labelOverflow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "labelDensity": {
-              "expr": {
-                "Literal": {
-                  "Value": "100L"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "layout": [
-        {
-          "properties": {
-            "seriesOrderSorted": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "seriesOrderReversed": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'TopRight'"
-                }
-              }
             }
           }
         }
@@ -1311,7 +817,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sales YTD vs Sales LYTD'"
+                  "Value": "'Orders YTD vs Orders LYTD Comparison by Same Month'"
                 }
               }
             },
@@ -1399,81 +905,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "26e78cb0127cb0c125c4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_date"
-              }
-            },
-            "Property": "Year"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "dim_date",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "Year"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "2026L"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
   }
 }

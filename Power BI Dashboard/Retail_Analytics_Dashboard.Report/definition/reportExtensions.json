@@ -311,7 +311,7 @@
         {
           "name": "Sales LYTD",
           "dataType": "Double",
-          "expression": "CALCULATE([Sales YTD],\r\n             SAMEPERIODLASTYEAR(dim_date[Date]))",
+          "expression": "CALCULATE([Sales YTD],\n             SAMEPERIODLASTYEAR(dim_date[Date]))",
           "references": {
             "measures": [
               {
@@ -507,6 +507,36 @@
                 "schema": "extension",
                 "entity": "Measures_",
                 "name": "Total Customers"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orders YTD",
+          "dataType": "Double",
+          "expression": "TOTALYTD([Total Orders], dim_date[Date])",
+          "formatString": "General Number",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Total Orders"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orders LYTD",
+          "dataType": "Double",
+          "expression": "CALCULATE([Orders YTD],\n              DATEADD(dim_date[Date],-1,YEAR))",
+          "formatString": "General Number",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Measures_",
+                "name": "Orders YTD"
               }
             ]
           }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "d4a601b769260c548a62",
+  "name": "2dc5faf70e04a5354870",
   "position": {
     "x": 866.0053948363709,
     "y": 609.15409536586412,
@@ -43,26 +43,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Sales YTD"
+                  "Property": "Quantity YoY %"
                 }
               },
-              "queryRef": "Measures_.Sales YTD",
-              "nativeQueryRef": "Sales YTD"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
-                  "Property": "Sales LYTD"
-                }
-              },
-              "queryRef": "Measures_.Sales LYTD",
-              "nativeQueryRef": "Sales LYTD"
+              "queryRef": "Measures_.Quantity YoY %",
+              "nativeQueryRef": "Quantity YoY %"
             }
           ]
         }
@@ -78,7 +63,7 @@
                     "Entity": "Measures_"
                   }
                 },
-                "Property": "Sales YTD"
+                "Property": "Quantity YoY %"
               }
             },
             "direction": "Descending"
@@ -231,7 +216,48 @@
           }
         },
         {
-          "properties": {},
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 3,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Schema": "extension",
+                                      "Entity": "Measures_"
+                                    }
+                                  },
+                                  "Property": "Quantity YoY %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#ff5254'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
           "selector": {
             "data": [
               {
@@ -1214,14 +1240,14 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1000000D"
+                  "Value": "0D"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "12D"
                 }
               }
             },
@@ -1242,14 +1268,14 @@
             "labelOrientation": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "1D"
                 }
               }
             },
             "labelPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "'Auto'"
+                  "Value": "'OutsideEnd'"
                 }
               }
             },
@@ -1311,7 +1337,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sales YTD vs Sales LYTD'"
+                  "Value": "'Quantity YoY % by Year'"
                 }
               }
             },
@@ -1403,7 +1429,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "26e78cb0127cb0c125c4",
+        "name": "e32e44c9abed90464d91",
+        "ordinal": 0,
         "field": {
           "Column": {
             "Expression": {
@@ -1473,7 +1500,24 @@
             }
           ]
         }
+      },
+      {
+        "name": "ca23e8e0a53708065e6b",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Measures_"
+              }
+            },
+            "Property": "Quantity YoY %"
+          }
+        },
+        "type": "Advanced"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

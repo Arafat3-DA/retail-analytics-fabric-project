@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "d4a601b769260c548a62",
+  "name": "c110afaf1b8dd7099019",
   "position": {
-    "x": 866.0053948363709,
-    "y": 609.15409536586412,
-    "z": 12000,
-    "height": 364.451168167611,
-    "width": 548.41223400459558,
-    "tabOrder": 6000
+    "x": 38.18181818181818,
+    "y": 629.090909090909,
+    "z": 5000,
+    "height": 343.63636363636363,
+    "width": 803.63636363636363,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -23,12 +23,13 @@
                       "Entity": "dim_date"
                     }
                   },
-                  "Property": "Year"
+                  "Property": "MonthShort"
                 }
               },
-              "queryRef": "dim_date.Year",
-              "nativeQueryRef": "Year",
-              "active": true
+              "queryRef": "dim_date.MonthShort",
+              "nativeQueryRef": "Month",
+              "active": true,
+              "displayName": "Month"
             }
           ]
         },
@@ -43,11 +44,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Sales YTD"
+                  "Property": "Sales MTD"
                 }
               },
-              "queryRef": "Measures_.Sales YTD",
-              "nativeQueryRef": "Sales YTD"
+              "queryRef": "Measures_.Sales MTD",
+              "nativeQueryRef": "Sales MTD"
             },
             {
               "field": {
@@ -58,11 +59,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Sales LYTD"
+                  "Property": "Sales LMTD"
                 }
               },
-              "queryRef": "Measures_.Sales LYTD",
-              "nativeQueryRef": "Sales LYTD"
+              "queryRef": "Measures_.Sales LMTD",
+              "nativeQueryRef": "Sales LMTD"
             }
           ]
         }
@@ -71,27 +72,39 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Schema": "extension",
-                    "Entity": "Measures_"
+                    "Entity": "dim_date"
                   }
                 },
-                "Property": "Sales YTD"
+                "Property": "MonthShort"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
       "categoryAxis": [
         {
           "properties": {
-            "bold": {
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "22L"
+                }
+              }
+            },
+            "concatenateLabels": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -105,14 +118,7 @@
                 }
               }
             },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "25L"
-                }
-              }
-            },
-            "concatenateLabels": {
+            "bold": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -123,13 +129,6 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Category'"
                 }
               }
             },
@@ -140,17 +139,10 @@
                 }
               }
             },
-            "innerPadding": {
+            "switchAxisPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "22L"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -160,14 +152,14 @@
       "valueAxis": [
         {
           "properties": {
-            "showAxisTitle": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "show": {
+            "invertAxis": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -181,7 +173,7 @@
                 }
               }
             },
-            "invertAxis": {
+            "showAxisTitle": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -228,18 +220,6 @@
                 }
               }
             }
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ]
           }
         },
         {
@@ -561,264 +541,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_customer"
+                            "Entity": "dim_product"
                           }
                         },
-                        "Property": "CountryFull"
+                        "Property": "Brand"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'United Kingdom'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_customer"
-                          }
-                        },
-                        "Property": "CountryFull"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Germany'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_customer"
-                          }
-                        },
-                        "Property": "CountryFull"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Netherlands'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_customer"
-                          }
-                        },
-                        "Property": "CountryFull"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Australia'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_customer"
-                          }
-                        },
-                        "Property": "CountryFull"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'France'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Aug'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Dec'"
+                        "Value": "'Contoso'"
                       }
                     }
                   }
@@ -851,56 +582,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_product"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "Brand"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Jan'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#1ec9af'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Jul'"
+                        "Value": "'Wide World Importers'"
                       }
                     }
                   }
@@ -934,56 +624,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_product"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "Brand"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Mar'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Nov'"
+                        "Value": "'The Phone Company'"
                       }
                     }
                   }
@@ -1017,56 +666,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_product"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "Brand"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Sep'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Jun'"
+                        "Value": "'Proseware'"
                       }
                     }
                   }
@@ -1100,15 +708,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_product"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "Brand"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Oct'"
+                        "Value": "'Litware'"
                       }
                     }
                   }
@@ -1123,8 +731,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
                     }
                   }
                 }
@@ -1141,15 +750,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_product"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "Brand"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Apr'"
+                        "Value": "'Northwind Traders'"
                       }
                     }
                   }
@@ -1176,21 +785,7 @@
                 }
               }
             },
-            "enableTitleDataLabel": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "enableValueDataLabel": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "enableDetailDataLabel": {
+            "labelOverflow": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -1204,99 +799,31 @@
                 }
               }
             },
+            "enableValueDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "enableTitleDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "enableDetailDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "labelContentLayout": {
               "expr": {
                 "Literal": {
                   "Value": "'SingleLine'"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1000000D"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "11D"
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "labelOrientation": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "labelPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Auto'"
-                }
-              }
-            },
-            "labelOverflow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "labelDensity": {
-              "expr": {
-                "Literal": {
-                  "Value": "100L"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "layout": [
-        {
-          "properties": {
-            "seriesOrderSorted": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "seriesOrderReversed": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'TopRight'"
                 }
               }
             }
@@ -1308,10 +835,10 @@
       "title": [
         {
           "properties": {
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sales YTD vs Sales LYTD'"
+                  "Value": "true"
                 }
               }
             },
@@ -1321,11 +848,18 @@
                   "Value": "'center'"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sales MTD and Sales LMTD by Month'"
+                }
+              }
             }
           }
         }
       ],
-      "divider": [
+      "subTitle": [
         {
           "properties": {
             "show": {
@@ -1338,7 +872,7 @@
           }
         }
       ],
-      "subTitle": [
+      "divider": [
         {
           "properties": {
             "show": {
@@ -1364,13 +898,31 @@
           }
         }
       ],
-      "dropShadow": [
+      "background": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4d3232'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -1380,6 +932,24 @@
       "border": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4d3232'"
+                    }
+                  }
+                }
+              }
+            },
             "radius": {
               "expr": {
                 "Literal": {
@@ -1396,84 +966,49 @@
             }
           }
         }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4d3232'"
+                    }
+                  }
+                }
+              }
+            },
+            "border": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4d3232'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "26e78cb0127cb0c125c4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_date"
-              }
-            },
-            "Property": "Year"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "dim_date",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "Year"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "2026L"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
   }
 }

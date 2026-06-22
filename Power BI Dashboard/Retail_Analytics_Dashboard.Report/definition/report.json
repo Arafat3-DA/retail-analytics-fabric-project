@@ -40,7 +40,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "false"
+                "Value": "true"
               }
             }
           }
@@ -90,13 +90,28 @@
           "type": "CustomTheme"
         },
         {
+          "name": "growth-chart-invest6769759175833443.png",
+          "path": "growth-chart-invest6769759175833443.png",
+          "type": "Image"
+        },
+        {
           "name": "growth-chart-invest708499088342026.png",
           "path": "growth-chart-invest708499088342026.png",
           "type": "Image"
         },
         {
+          "name": "increase44336189642067636.png",
+          "path": "increase44336189642067636.png",
+          "type": "Image"
+        },
+        {
           "name": "order-history46445145371555274.png",
           "path": "order-history46445145371555274.png",
+          "type": "Image"
+        },
+        {
+          "name": "revenue-alt12386392303855986.png",
+          "path": "revenue-alt12386392303855986.png",
           "type": "Image"
         },
         {
@@ -110,8 +125,23 @@
           "type": "Image"
         },
         {
+          "name": "revenue-alt8914908515948153.png",
+          "path": "revenue-alt8914908515948153.png",
+          "type": "Image"
+        },
+        {
+          "name": "revenue686882283987902.png",
+          "path": "revenue686882283987902.png",
+          "type": "Image"
+        },
+        {
           "name": "usd-circle3870162675503742.png",
           "path": "usd-circle3870162675503742.png",
+          "type": "Image"
+        },
+        {
+          "name": "usd-circle521597455948107.png",
+          "path": "usd-circle521597455948107.png",
           "type": "Image"
         }
       ]
