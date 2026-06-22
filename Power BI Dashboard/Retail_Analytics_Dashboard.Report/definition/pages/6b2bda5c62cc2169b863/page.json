@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "6b2bda5c62cc2169b863",
+  "displayName": "Financial Performance",
+  "displayOption": "FitToPage",
+  "height": 1000,
+  "width": 1900,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#3E1E1E'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "520c0a6180dbac001635",
+      "target": "356c89c37ca7a7a03805",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e4f469011ec00cc0ab95",
+      "target": "356c89c37ca7a7a03805",
+      "type": "DataFilter"
+    },
+    {
+      "source": "520c0a6180dbac001635",
+      "target": "4aa73747b90d670da291",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e4f469011ec00cc0ab95",
+      "target": "4aa73747b90d670da291",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e4f469011ec00cc0ab95",
+      "target": "f73aa5f001a77c602484",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e4f469011ec00cc0ab95",
+      "target": "d4a601b769260c548a62",
+      "type": "NoFilter"
+    }
+  ]
+}

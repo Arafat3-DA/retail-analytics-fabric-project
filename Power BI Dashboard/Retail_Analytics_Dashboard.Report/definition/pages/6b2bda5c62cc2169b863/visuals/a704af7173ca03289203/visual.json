@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "532ff3af0d7ba7e75255",
+  "name": "a704af7173ca03289203",
   "position": {
     "x": 37.972491518928052,
     "y": 84.575094746703385,
@@ -69,21 +69,6 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Total Orders"
-                }
-              },
-              "queryRef": "Measures_.Total Orders",
-              "nativeQueryRef": "Total Orders"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
                   "Property": "Gross Profit Margin"
                 }
               },
@@ -99,12 +84,26 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Average Order Value"
+                  "Property": "Sales YoY %"
                 }
               },
-              "queryRef": "Measures_.Average Order Value",
-              "nativeQueryRef": "AVG Order Value",
-              "displayName": "AVG Order Value"
+              "queryRef": "Measures_.Sales YoY %",
+              "nativeQueryRef": "Sales YoY %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Gross Profit YoY %"
+                }
+              },
+              "queryRef": "Measures_.Gross Profit YoY %",
+              "nativeQueryRef": "Gross Profit YoY %"
             }
           ]
         }
@@ -779,75 +778,6 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'order-history.png'"
-                    }
-                  }
-                },
-                "url": {
-                  "expr": {
-                    "ResourcePackageItem": {
-                      "PackageName": "RegisteredResources",
-                      "PackageType": 1,
-                      "ItemName": "order-history46445145371555274.png"
-                    }
-                  }
-                },
-                "scaling": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'Normal'"
-                    }
-                  }
-                }
-              }
-            },
-            "fit": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Fit'"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
-                }
-              }
-            },
-            "imageAreaSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "25L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Measures_.Total Orders"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "image": {
-              "image": {
-                "name": {
-                  "expr": {
-                    "Literal": {
                       "Value": "'benefit-porcent.png'"
                     }
                   }
@@ -917,7 +847,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'checklist.png'"
+                      "Value": "'growth-chart-invest.png'"
                     }
                   }
                 },
@@ -926,7 +856,76 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "checklist6684362120385364.png"
+                      "ItemName": "growth-chart-invest708499088342026.png"
+                    }
+                  }
+                },
+                "scaling": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'Normal'"
+                    }
+                  }
+                }
+              }
+            },
+            "fit": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fit'"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "imageAreaSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measures_.Sales YoY %"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "image": {
+              "image": {
+                "name": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'revenue-alt.png'"
+                    }
+                  }
+                },
+                "url": {
+                  "expr": {
+                    "ResourcePackageItem": {
+                      "PackageName": "RegisteredResources",
+                      "PackageType": 1,
+                      "ItemName": "revenue-alt5332492767783306.png"
                     }
                   }
                 },
@@ -969,7 +968,7 @@
             }
           },
           "selector": {
-            "metadata": "Measures_.Average Order Value"
+            "metadata": "Measures_.Gross Profit YoY %"
           }
         }
       ]
