@@ -297,7 +297,7 @@
           "name": "Total Quantity Sold LY",
           "dataType": "Double",
           "expression": "CALCULATE([Total Quantity Sold],\r\n                         SAMEPERIODLASTYEAR(dim_date[Date]))",
-          "formatString": "0.00",
+          "formatString": "General Number",
           "references": {
             "measures": [
               {
@@ -515,7 +515,6 @@
           "name": "Orders YTD",
           "dataType": "Double",
           "expression": "TOTALYTD([Total Orders], dim_date[Date])",
-          "formatString": "General Number",
           "references": {
             "measures": [
               {
@@ -530,7 +529,6 @@
           "name": "Orders LYTD",
           "dataType": "Double",
           "expression": "CALCULATE([Orders YTD],\n              DATEADD(dim_date[Date],-1,YEAR))",
-          "formatString": "General Number",
           "references": {
             "measures": [
               {
