@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "e03da50ce677cc0268d8",
+  "name": "eba2ce4309001305b074",
   "position": {
     "x": 37.972491518928052,
     "y": 84.575094746703385,
     "z": 6000,
     "height": 144.98587670863438,
     "width": 1829.5836822756241,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -24,11 +24,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Total Sales"
+                  "Property": "Total Customers"
                 }
               },
-              "queryRef": "Measures_.Total Sales",
-              "nativeQueryRef": "Total Sales"
+              "queryRef": "Measures_.Total Customers",
+              "nativeQueryRef": "Total Customers"
             },
             {
               "field": {
@@ -39,11 +39,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Gross Profit"
+                  "Property": "Revenue per Customer"
                 }
               },
-              "queryRef": "Measures_.Gross Profit",
-              "nativeQueryRef": "Gross Profit"
+              "queryRef": "Measures_.Revenue per Customer",
+              "nativeQueryRef": "Revenue per Customer"
             },
             {
               "field": {
@@ -54,11 +54,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Total Quantity Sold"
+                  "Property": "Revenue per Store"
                 }
               },
-              "queryRef": "Measures_.Total Quantity Sold",
-              "nativeQueryRef": "Total Quantity Sold"
+              "queryRef": "Measures_.Revenue per Store",
+              "nativeQueryRef": "Revenue per Store"
             },
             {
               "field": {
@@ -69,11 +69,26 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Gross Profit Margin"
+                  "Property": "Total Stores"
                 }
               },
-              "queryRef": "Measures_.Gross Profit Margin",
-              "nativeQueryRef": "Gross Profit Margin"
+              "queryRef": "Measures_.Total Stores",
+              "nativeQueryRef": "Total Stores"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Measures_"
+                    }
+                  },
+                  "Property": "Total Orders"
+                }
+              },
+              "queryRef": "Measures_.Total Orders",
+              "nativeQueryRef": "Total Orders"
             },
             {
               "field": {
@@ -89,21 +104,6 @@
               },
               "queryRef": "Measures_.Average Order Value",
               "nativeQueryRef": "Average Order Value"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
-                  "Property": "Total Products Sold"
-                }
-              },
-              "queryRef": "Measures_.Total Products Sold",
-              "nativeQueryRef": "Total Products Sold"
             }
           ]
         }
@@ -119,7 +119,7 @@
                     "Entity": "Measures_"
                   }
                 },
-                "Property": "Total Sales"
+                "Property": "Total Customers"
               }
             },
             "direction": "Descending"
@@ -450,20 +450,6 @@
           "selector": {
             "id": "default"
           }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Measures_.Total Sales"
-          }
         }
       ],
       "label": [
@@ -543,7 +529,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'usd-circle.png'"
+                      "Value": "'user-experience.png'"
                     }
                   }
                 },
@@ -552,173 +538,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "usd-circle3870162675503742.png"
-                    }
-                  }
-                },
-                "scaling": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'Normal'"
-                    }
-                  }
-                }
-              }
-            },
-            "fit": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Fit'"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
-            },
-            "imageAreaSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "25L"
-                }
-              }
-            },
-            "rectangleRoundedCurve": {
-              "expr": {
-                "Literal": {
-                  "Value": "4L"
-                }
-              }
-            },
-            "rectangleRoundedCurveCustomStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "verticalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'middle'"
-                }
-              }
-            },
-            "imageEffects": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Measures_.Total Sales"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "image": {
-              "image": {
-                "name": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'revenue-alt.png'"
-                    }
-                  }
-                },
-                "url": {
-                  "expr": {
-                    "ResourcePackageItem": {
-                      "PackageName": "RegisteredResources",
-                      "PackageType": 1,
-                      "ItemName": "revenue-alt4931887934726098.png"
-                    }
-                  }
-                },
-                "scaling": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'Normal'"
-                    }
-                  }
-                }
-              }
-            },
-            "fit": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Fit'"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
-            },
-            "imageAreaSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "25L"
-                }
-              }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Measures_.Gross Profit"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "image": {
-              "image": {
-                "name": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'benefit-porcent.png'"
-                    }
-                  }
-                },
-                "url": {
-                  "expr": {
-                    "ResourcePackageItem": {
-                      "PackageName": "RegisteredResources",
-                      "PackageType": 1,
-                      "ItemName": "benefit-porcent46124167599688715.png"
+                      "ItemName": "user-experience9399377147594482.png"
                     }
                   }
                 },
@@ -761,7 +581,7 @@
             }
           },
           "selector": {
-            "metadata": "Measures_.Gross Profit Margin"
+            "metadata": "Measures_.Total Customers"
           }
         },
         {
@@ -778,7 +598,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'product (1).png'"
+                      "Value": "'lead-funnel.png'"
                     }
                   }
                 },
@@ -787,7 +607,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "product_(1)8599285658222346.png"
+                      "ItemName": "lead-funnel07002882176227654.png"
                     }
                   }
                 },
@@ -830,7 +650,7 @@
             }
           },
           "selector": {
-            "metadata": "Measures_.Total Quantity Sold"
+            "metadata": "Measures_.Revenue per Customer"
           }
         },
         {
@@ -847,7 +667,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'price.png'"
+                      "Value": "'allocation (1).png'"
                     }
                   }
                 },
@@ -856,7 +676,214 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "price34485036384921675.png"
+                      "ItemName": "allocation_(1)33009004668921227.png"
+                    }
+                  }
+                },
+                "scaling": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'Normal'"
+                    }
+                  }
+                }
+              }
+            },
+            "fit": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fit'"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5L"
+                }
+              }
+            },
+            "imageAreaSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measures_.Revenue per Store"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "image": {
+              "image": {
+                "name": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'store-alt.png'"
+                    }
+                  }
+                },
+                "url": {
+                  "expr": {
+                    "ResourcePackageItem": {
+                      "PackageName": "RegisteredResources",
+                      "PackageType": 1,
+                      "ItemName": "store-alt9226008762102559.png"
+                    }
+                  }
+                },
+                "scaling": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'Normal'"
+                    }
+                  }
+                }
+              }
+            },
+            "fit": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fit'"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5L"
+                }
+              }
+            },
+            "imageAreaSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measures_.Total Stores"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "image": {
+              "image": {
+                "name": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'box-circle-check.png'"
+                    }
+                  }
+                },
+                "url": {
+                  "expr": {
+                    "ResourcePackageItem": {
+                      "PackageName": "RegisteredResources",
+                      "PackageType": 1,
+                      "ItemName": "box-circle-check14560909973828096.png"
+                    }
+                  }
+                },
+                "scaling": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'Normal'"
+                    }
+                  }
+                }
+              }
+            },
+            "fit": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fit'"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5L"
+                }
+              }
+            },
+            "imageAreaSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measures_.Total Orders"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "image": {
+              "image": {
+                "name": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'selling.png'"
+                    }
+                  }
+                },
+                "url": {
+                  "expr": {
+                    "ResourcePackageItem": {
+                      "PackageName": "RegisteredResources",
+                      "PackageType": 1,
+                      "ItemName": "selling6590194605321271.png"
                     }
                   }
                 },
@@ -900,75 +927,6 @@
           },
           "selector": {
             "metadata": "Measures_.Average Order Value"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "image": {
-              "image": {
-                "name": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'order (2).png'"
-                    }
-                  }
-                },
-                "url": {
-                  "expr": {
-                    "ResourcePackageItem": {
-                      "PackageName": "RegisteredResources",
-                      "PackageType": 1,
-                      "ItemName": "order_(2)020483057969611362.png"
-                    }
-                  }
-                },
-                "scaling": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'Normal'"
-                    }
-                  }
-                }
-              }
-            },
-            "fit": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Fit'"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
-                }
-              }
-            },
-            "imageAreaSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "25L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Measures_.Total Products Sold"
           }
         }
       ]

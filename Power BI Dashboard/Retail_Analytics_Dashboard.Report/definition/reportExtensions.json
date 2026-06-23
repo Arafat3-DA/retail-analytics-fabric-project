@@ -297,7 +297,6 @@
           "name": "Total Quantity Sold LY",
           "dataType": "Double",
           "expression": "CALCULATE([Total Quantity Sold],\r\n                         SAMEPERIODLASTYEAR(dim_date[Date]))",
-          "formatString": "General Number",
           "references": {
             "measures": [
               {

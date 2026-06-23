@@ -17,18 +17,18 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_date"
+                      "Schema": "extension",
+                      "Entity": "Measures_"
                     }
                   },
-                  "Property": "MonthShort"
+                  "Property": "Total Stores"
                 }
               },
-              "queryRef": "dim_date.MonthShort",
-              "nativeQueryRef": "Month",
-              "displayName": "Month"
+              "queryRef": "Measures_.Total Stores",
+              "nativeQueryRef": "Total Stores"
             },
             {
               "field": {
@@ -39,11 +39,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Sales YTD"
+                  "Property": "Total Sales"
                 }
               },
-              "queryRef": "Measures_.Sales YTD",
-              "nativeQueryRef": "Sales YTD"
+              "queryRef": "Measures_.Total Sales",
+              "nativeQueryRef": "Total Sales"
             },
             {
               "field": {
@@ -54,81 +54,17 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Sales LYTD"
+                  "Property": "Revenue per Store"
                 }
               },
-              "queryRef": "Measures_.Sales LYTD",
-              "nativeQueryRef": "Sales LYTD"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
-                  "Property": "Sales MTD"
-                }
-              },
-              "queryRef": "Measures_.Sales MTD",
-              "nativeQueryRef": "Sales MTD"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Measures_"
-                    }
-                  },
-                  "Property": "Sales LMTD"
-                }
-              },
-              "queryRef": "Measures_.Sales LMTD",
-              "nativeQueryRef": "Sales LMTD"
+              "queryRef": "Measures_.Revenue per Store",
+              "nativeQueryRef": "Revenue per Store"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Schema": "extension",
-                    "Entity": "Measures_"
-                  }
-                },
-                "Property": "Sales YTD"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "70.50949748314488D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "dim_date.MonthShort"
-          }
-        }
-      ],
       "columnHeaders": [
         {
           "properties": {}

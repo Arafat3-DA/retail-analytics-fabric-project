@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "31e5414a08e5b4035c00",
+  "name": "4f00ab163e8823054307",
   "position": {
     "x": 866.0053948363709,
     "y": 609.15409536586412,
-    "z": 11000,
+    "z": 10000,
     "height": 364.451168167611,
     "width": 548.41223400459558,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -20,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_product"
+                      "Entity": "dim_customer"
                     }
                   },
-                  "Property": "CategoryName"
+                  "Property": "CountryFull"
                 }
               },
-              "queryRef": "dim_product.CategoryName",
-              "nativeQueryRef": "Category Name",
-              "active": true,
-              "displayName": "Category Name"
+              "queryRef": "dim_customer.CountryFull",
+              "nativeQueryRef": "CountryFull",
+              "active": true
             }
           ]
         },
@@ -44,11 +43,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Total Quantity Sold"
+                  "Property": "Total Customers"
                 }
               },
-              "queryRef": "Measures_.Total Quantity Sold",
-              "nativeQueryRef": "Total Quantity Sold"
+              "queryRef": "Measures_.Total Customers",
+              "nativeQueryRef": "Total Customers"
             }
           ]
         }
@@ -64,7 +63,7 @@
                     "Entity": "Measures_"
                   }
                 },
-                "Property": "Total Quantity Sold"
+                "Property": "Total Customers"
               }
             },
             "direction": "Descending"
@@ -610,7 +609,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 3,
+                      "ColorId": 4,
                       "Percent": 0
                     }
                   }
@@ -651,8 +650,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
                     }
                   }
                 }
@@ -1198,7 +1198,7 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1000000D"
+                  "Value": "1000D"
                 }
               }
             },
@@ -1302,7 +1302,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Quantity Sold by Category'"
+                  "Value": "'Total Customers by Country'"
                 }
               }
             },

@@ -65,8 +65,18 @@
       "type": "RegisteredResources",
       "items": [
         {
+          "name": "allocation_(1)33009004668921227.png",
+          "path": "allocation_(1)33009004668921227.png",
+          "type": "Image"
+        },
+        {
           "name": "benefit-porcent46124167599688715.png",
           "path": "benefit-porcent46124167599688715.png",
+          "type": "Image"
+        },
+        {
+          "name": "box-circle-check14560909973828096.png",
+          "path": "box-circle-check14560909973828096.png",
           "type": "Image"
         },
         {
@@ -105,8 +115,28 @@
           "type": "Image"
         },
         {
+          "name": "lead-funnel07002882176227654.png",
+          "path": "lead-funnel07002882176227654.png",
+          "type": "Image"
+        },
+        {
+          "name": "order_(2)020483057969611362.png",
+          "path": "order_(2)020483057969611362.png",
+          "type": "Image"
+        },
+        {
           "name": "order-history46445145371555274.png",
           "path": "order-history46445145371555274.png",
+          "type": "Image"
+        },
+        {
+          "name": "price34485036384921675.png",
+          "path": "price34485036384921675.png",
+          "type": "Image"
+        },
+        {
+          "name": "product_(1)8599285658222346.png",
+          "path": "product_(1)8599285658222346.png",
           "type": "Image"
         },
         {
@@ -135,6 +165,16 @@
           "type": "Image"
         },
         {
+          "name": "selling6590194605321271.png",
+          "path": "selling6590194605321271.png",
+          "type": "Image"
+        },
+        {
+          "name": "store-alt9226008762102559.png",
+          "path": "store-alt9226008762102559.png",
+          "type": "Image"
+        },
+        {
           "name": "usd-circle3870162675503742.png",
           "path": "usd-circle3870162675503742.png",
           "type": "Image"
@@ -142,6 +182,11 @@
         {
           "name": "usd-circle521597455948107.png",
           "path": "usd-circle521597455948107.png",
+          "type": "Image"
+        },
+        {
+          "name": "user-experience9399377147594482.png",
+          "path": "user-experience9399377147594482.png",
           "type": "Image"
         }
       ]

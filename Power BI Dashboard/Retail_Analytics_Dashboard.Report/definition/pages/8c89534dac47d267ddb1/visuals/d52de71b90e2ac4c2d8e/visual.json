@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "9c74f0d4c9c29dc97273",
+  "name": "d52de71b90e2ac4c2d8e",
   "position": {
-    "x": 1511.7057465030734,
-    "y": 10.424301775122769,
-    "z": 12000,
-    "height": 84.285714285714292,
-    "width": 264.28571428571428,
-    "tabOrder": 8000
+    "x": 892.72727272727263,
+    "y": 11.073652424473435,
+    "z": 14000,
+    "height": 83.636363636363626,
+    "width": 274.5454545454545,
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_date"
+                      "Entity": "dim_store"
                     }
                   },
-                  "Property": "Year"
+                  "Property": "Description"
                 }
               },
-              "queryRef": "dim_date.Year",
-              "nativeQueryRef": "Year",
+              "queryRef": "dim_store.Description",
+              "nativeQueryRef": "Description",
               "active": true
             }
           ]
@@ -105,49 +105,7 @@
       ],
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "dim_date",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "Year"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "2020L"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "items": [
@@ -189,7 +147,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Year'"
+                  "Value": "'Store'"
                 }
               }
             },
@@ -250,15 +208,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e9ad68c1ee2183e01920",
+        "name": "8f498c300062eeb65231",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "dim_date"
+                "Entity": "dim_store"
               }
             },
-            "Property": "Year"
+            "Property": "Description"
           }
         },
         "type": "Categorical",
@@ -267,7 +225,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "dim_date",
+              "Entity": "dim_store",
               "Type": 0
             }
           ],
@@ -285,7 +243,7 @@
                                 "Source": "d"
                               }
                             },
-                            "Property": "Year"
+                            "Property": "Description"
                           }
                         }
                       ],

@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "31e5414a08e5b4035c00",
+  "name": "91146d9a1e308b9a0d73",
   "position": {
-    "x": 866.0053948363709,
-    "y": 609.15409536586412,
-    "z": 11000,
-    "height": 364.451168167611,
-    "width": 548.41223400459558,
-    "tabOrder": 6000
+    "x": 696.36363636363626,
+    "y": 252.72727272727272,
+    "z": 15000,
+    "height": 336.36363636363632,
+    "width": 567.27272727272725,
+    "tabOrder": 15000
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_product"
+                      "Entity": "dim_customer"
                     }
                   },
-                  "Property": "CategoryName"
+                  "Property": "Occupation"
                 }
               },
-              "queryRef": "dim_product.CategoryName",
-              "nativeQueryRef": "Category Name",
-              "active": true,
-              "displayName": "Category Name"
+              "queryRef": "dim_customer.Occupation",
+              "nativeQueryRef": "Occupation",
+              "active": true
             }
           ]
         },
@@ -44,11 +43,11 @@
                       "Entity": "Measures_"
                     }
                   },
-                  "Property": "Total Quantity Sold"
+                  "Property": "Total Sales"
                 }
               },
-              "queryRef": "Measures_.Total Quantity Sold",
-              "nativeQueryRef": "Total Quantity Sold"
+              "queryRef": "Measures_.Total Sales",
+              "nativeQueryRef": "Total Sales"
             }
           ]
         }
@@ -64,7 +63,7 @@
                     "Entity": "Measures_"
                   }
                 },
-                "Property": "Total Quantity Sold"
+                "Property": "Total Sales"
               }
             },
             "direction": "Descending"
@@ -77,7 +76,28 @@
       "categoryAxis": [
         {
           "properties": {
-            "bold": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Category'"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "22L"
+                }
+              }
+            },
+            "concatenateLabels": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -91,14 +111,7 @@
                 }
               }
             },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "25L"
-                }
-              }
-            },
-            "concatenateLabels": {
+            "bold": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -109,13 +122,6 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Category'"
                 }
               }
             },
@@ -126,17 +132,10 @@
                 }
               }
             },
-            "innerPadding": {
+            "switchAxisPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "22L"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -146,14 +145,14 @@
       "valueAxis": [
         {
           "properties": {
-            "showAxisTitle": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "show": {
+            "invertAxis": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -167,7 +166,7 @@
                 }
               }
             },
-            "invertAxis": {
+            "showAxisTitle": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -317,9 +316,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0.2
+                    "Literal": {
+                      "Value": "'#547E4E'"
                     }
                   }
                 }
@@ -402,7 +400,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1ec9af'"
+                      "Value": "'#547E4E'"
                     }
                   }
                 }
@@ -443,8 +441,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
+                      "ColorId": 2,
+                      "Percent": 0.2
                     }
                   }
                 }
@@ -548,53 +546,12 @@
                             "Entity": "dim_customer"
                           }
                         },
-                        "Property": "CountryFull"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'United Kingdom'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_customer"
-                          }
-                        },
-                        "Property": "CountryFull"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Germany'"
+                        "Value": "'Samuel M Allen'"
                       }
                     }
                   }
@@ -610,7 +567,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 3,
+                      "ColorId": 4,
                       "Percent": 0
                     }
                   }
@@ -631,53 +588,12 @@
                             "Entity": "dim_customer"
                           }
                         },
-                        "Property": "CountryFull"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Netherlands'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_customer"
-                          }
-                        },
-                        "Property": "CountryFull"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Australia'"
+                        "Value": "'Ralph S Hirsch'"
                       }
                     }
                   }
@@ -714,12 +630,12 @@
                             "Entity": "dim_customer"
                           }
                         },
-                        "Property": "CountryFull"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'France'"
+                        "Value": "'David M Smith'"
                       }
                     }
                   }
@@ -734,8 +650,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
                     }
                   }
                 }
@@ -752,15 +669,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_customer"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Aug'"
+                        "Value": "'Sam K Sutton'"
                       }
                     }
                   }
@@ -794,15 +711,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_customer"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Dec'"
+                        "Value": "'Lea S Kappel'"
                       }
                     }
                   }
@@ -817,8 +734,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#1ec9af'"
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
                     }
                   }
                 }
@@ -835,56 +753,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_customer"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Jan'"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#1ec9af'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "dim_date"
-                          }
-                        },
-                        "Property": "MonthShort"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'Jul'"
+                        "Value": "'Joel M Griswold'"
                       }
                     }
                   }
@@ -918,15 +795,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_customer"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Mar'"
+                        "Value": "'John M Smith'"
                       }
                     }
                   }
@@ -941,8 +818,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
                     }
                   }
                 }
@@ -959,15 +837,57 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_customer"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Nov'"
+                        "Value": "'Mary J Smith'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_customer"
+                          }
+                        },
+                        "Property": "FullName"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'James M Smith'"
                       }
                     }
                   }
@@ -1001,15 +921,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_customer"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Sep'"
+                        "Value": "'James A Johnson'"
                       }
                     }
                   }
@@ -1024,8 +944,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
                     }
                   }
                 }
@@ -1042,15 +963,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_customer"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "FullName"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Jun'"
+                        "Value": "'John S Smith'"
                       }
                     }
                   }
@@ -1084,15 +1005,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_customer"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "Occupation"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Oct'"
+                        "Value": "'Manufacturers'"
                       }
                     }
                   }
@@ -1107,8 +1028,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#547E4E'"
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
                     }
                   }
                 }
@@ -1125,15 +1047,183 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "dim_date"
+                            "Entity": "dim_customer"
                           }
                         },
-                        "Property": "MonthShort"
+                        "Property": "Occupation"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Apr'"
+                        "Value": "'ATF agent'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_customer"
+                          }
+                        },
+                        "Property": "Occupation"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Broker'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_customer"
+                          }
+                        },
+                        "Property": "Occupation"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Translator'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_customer"
+                          }
+                        },
+                        "Property": "Occupation"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Immunohematology technologist'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_customer"
+                          }
+                        },
+                        "Property": "Occupation"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Dipper'"
                       }
                     }
                   }
@@ -1146,6 +1236,13 @@
       "labels": [
         {
           "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -1160,21 +1257,7 @@
                 }
               }
             },
-            "enableTitleDataLabel": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "enableValueDataLabel": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "enableDetailDataLabel": {
+            "labelOverflow": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -1188,93 +1271,38 @@
                 }
               }
             },
-            "labelContentLayout": {
+            "enableValueDataLabel": {
               "expr": {
                 "Literal": {
-                  "Value": "'SingleLine'"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1000000D"
+                  "Value": "true"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "9D"
                 }
               }
             },
-            "bold": {
+            "enableTitleDataLabel": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "labelOrientation": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "labelPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Auto'"
-                }
-              }
-            },
-            "labelOverflow": {
+            "enableDetailDataLabel": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "labelDensity": {
+            "labelContentLayout": {
               "expr": {
                 "Literal": {
-                  "Value": "100L"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "layout": [
-        {
-          "properties": {
-            "seriesOrderSorted": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "seriesOrderReversed": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "'SingleLine'"
                 }
               }
             }
@@ -1284,10 +1312,17 @@
       "legend": [
         {
           "properties": {
-            "position": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'TopRight'"
+                  "Value": "false"
+                }
+              }
+            },
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -1302,7 +1337,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Quantity Sold by Category'"
+                  "Value": "'Top 10 Customer Occupation by Total Sales'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
@@ -1371,6 +1413,24 @@
       "border": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4d3232'"
+                    }
+                  }
+                }
+              }
+            },
             "radius": {
               "expr": {
                 "Literal": {
@@ -1387,6 +1447,65 @@
             }
           }
         }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4d3232'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4d3232'"
+                    }
+                  }
+                }
+              }
+            },
+            "border": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4d3232'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -1394,70 +1513,99 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "26e78cb0127cb0c125c4",
+        "name": "2779ed837e5acb8d5884",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "dim_date"
+                "Entity": "dim_customer"
               }
             },
-            "Property": "Year"
+            "Property": "Occupation"
           }
         },
-        "type": "Categorical",
+        "type": "TopN",
         "filter": {
           "Version": 2,
           "From": [
             {
-              "Name": "d",
-              "Entity": "dim_date",
+              "Name": "subquery",
+              "Expression": {
+                "Subquery": {
+                  "Query": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d1",
+                        "Entity": "dim_customer",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "m",
+                        "Entity": "Measures_",
+                        "Schema": "extension",
+                        "Type": 0
+                      }
+                    ],
+                    "Select": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "d1"
+                            }
+                          },
+                          "Property": "Occupation"
+                        },
+                        "Name": "field"
+                      }
+                    ],
+                    "OrderBy": [
+                      {
+                        "Direction": 2,
+                        "Expression": {
+                          "Measure": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "m"
+                              }
+                            },
+                            "Property": "Total Sales"
+                          }
+                        }
+                      }
+                    ],
+                    "Top": 10
+                  }
+                }
+              },
+              "Type": 2
+            },
+            {
+              "Name": "d1",
+              "Entity": "dim_customer",
               "Type": 0
             }
           ],
           "Where": [
             {
               "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "Year"
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d1"
                           }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "2026L"
-                            }
-                          }
-                        ]
-                      ]
+                        },
+                        "Property": "Occupation"
+                      }
                     }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User",
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
+                  ],
+                  "Table": {
+                    "SourceRef": {
+                      "Source": "subquery"
                     }
                   }
                 }
