@@ -179,20 +179,6 @@
                   "Value": "true"
                 }
               }
-            },
-            "valueMin": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "valueSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "0.29253794609887757D"
-                }
-              }
             }
           }
         }

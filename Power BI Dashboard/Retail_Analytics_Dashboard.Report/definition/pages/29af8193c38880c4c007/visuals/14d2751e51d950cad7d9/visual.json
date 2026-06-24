@@ -1116,7 +1116,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       },
       {
         "name": "f3950b50448d81936902",
@@ -1149,6 +1150,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "2c416c649e038e803a5c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_product"
+              }
+            },
+            "Property": "ProductName"
+          }
+        },
+        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"
