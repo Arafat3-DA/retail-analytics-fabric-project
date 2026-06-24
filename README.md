@@ -1,7 +1,7 @@
 # 🛒 Retail Analytics — Microsoft Fabric
 > End-to-end data engineering and analytics project built on Microsoft Fabric using Medallion Architecture (Bronze → Silver → Gold), Apache Spark transformations, and Power BI dashboards.
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 ![Platform](https://img.shields.io/badge/Platform-Microsoft%20Fabric-purple)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -149,7 +149,7 @@ retail-analytics-fabric-project/
 - Drop irrelevant columns — Vehicle, Latitude, Longitude
 - Add derived columns:
   - `SalesAmount = ROUND(Quantity × UnitPrice, 2)`
-  - `GrossProfit = ROUND(SalesAmount - (Quantity × UnitCost), 2)`
+  - `GrossProfit = ROUND((Quantity × UnitPrice) - (Quantity × UnitCost), 2)`
 - Write clean Delta tables to Lakehouse_Silver
 - Total: 59,114,388 rows — zero data loss
 
@@ -160,23 +160,22 @@ retail-analytics-fabric-project/
 - Write tables using `saveAsTable()` to the default `Lakehouse_Gold`
 - Total: 5 tables containing `25,406,390` rows across the dimensional model
 
-### Gold → Power BI 🔄 In Progress
+### Gold → Power BI ✅ Complete
 - Connect Power BI via Direct Lake mode ✅ Complete
-- Build 5 dashboard pages 🔄 In Progress
-- Implement DAX measures 🔄 In Progress
-- Implement Row Level Security ⏳ Planned
+- Build 5 dashboard pages ✅ Complete
+- Implement 37 DAX measures ✅ Complete
 
 ---
 
-## 📊 Power BI Dashboards *(upcoming)*
+## 📊 Power BI Dashboards
 
-Planned dashboard pages:
+Dashboard pages:
 
 - **Executive Summary** — Revenue, Profit, Orders KPIs
-- **Sales Trends** — Monthly and yearly trend lines
+- **Financial Performance** — Cost of Sales, Gross Profit Margin, YoY comparisons
+- **Sales Trends** — Monthly and yearly trend lines, MTD/QTD/YTD metrics
 - **Product Performance** — Top/bottom products by revenue and margin
-- **Store Analysis** — Store-level comparison by region and country
-- **Customer Insights** — Segmentation and lifetime value
+- **Customer & Store Performance** — Segmentation, store rankings, and regional analysis
 
 ---
 
@@ -186,7 +185,7 @@ Planned dashboard pages:
 |---|---|---|
 | Week 1 | Setup, GitHub, Bronze → Silver transformations | ✅ Complete |
 | Week 2 | Silver → Gold aggregations | ✅ Complete |
-| Week 3 | Power BI dashboard development | 🔄 In Progress |
+| Week 3 | Power BI dashboard development | ✅ Complete |
 | Week 4 | Final testing, documentation, LinkedIn posts | ⏳ Planned |
 
 ---

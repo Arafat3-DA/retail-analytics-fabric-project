@@ -49,7 +49,7 @@ FROM silver_product
 *   **Source Table:** `silver_customer`
 *   **Target Table:** `dim_customer`
 *   **Row Count:** `1,679,846` rows
-*   **Transformations:** Selected columns from `silver_customer` dropping `StartDate` and `EndDate` (not required for analytics).
+*   **Transformations:** Selected columns from `silver_customer` dropping `StartDate`, `EndDate`, and `StreetAddress` (not required for analytics).
 
 #### Spark SQL Implementation
 ```sql

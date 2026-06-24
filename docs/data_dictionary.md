@@ -52,7 +52,7 @@ This data dictionary defines the structure and metadata of both the **Silver (Cl
 | `NetPrice` | `DOUBLE` | Metric | No | Net price received after adjustments |
 | `UnitCost` | `DOUBLE` | Metric | No | Operational cost to produce or acquire a single unit |
 | `CurrencyCode` | `string` | FK | No | Three-letter currency code (e.g. 'USD'); references `silver_currencyexchange` |
-| `ExchangeRate` | `DOUBLE` | Rate | No | Exchange rate multiplier applied on the transaction day |
+| `ExchangeRate` | `DOUBLE` | Rate | No | Exchange rate divisor/factor for converting local currency to USD (LocalAmount / ExchangeRate = USD) |
 | `SalesAmount` | `DOUBLE` | Measure (New) | No | Derived amount: `ROUND(Quantity * UnitPrice, 2)` |
 | `GrossProfit` | `DOUBLE` | Measure (New) | No | Derived profit: `ROUND((Quantity * UnitPrice) - (Quantity * UnitCost), 2)` |
 
@@ -227,7 +227,7 @@ This data dictionary defines the structure and metadata of both the **Silver (Cl
 | `NetPrice` | `DOUBLE` | Metric | No | Net price received after adjustments in local currency |
 | `UnitCost` | `DOUBLE` | Metric | No | Operational cost to produce or acquire a single unit in local currency |
 | `CurrencyCode` | `string` | FK | No | Three-letter currency code (e.g. 'USD') |
-| `ExchangeRate` | `DOUBLE` | Rate | No | Exchange rate multiplier applied on the transaction day |
+| `ExchangeRate` | `DOUBLE` | Rate | No | Exchange rate divisor/factor for converting local currency to USD (LocalAmount / ExchangeRate = USD) |
 | `SalesAmount` | `DOUBLE` | Measure | No | Derived amount: `ROUND(Quantity * UnitPrice, 2)` (local currency) |
 | `GrossProfit` | `DOUBLE` | Measure | No | Derived profit: `ROUND((Quantity * UnitPrice) - (Quantity * UnitCost), 2)` (local currency) |
 | `SalesAmountUSD` | `DOUBLE` | Measure | No | USD converted sales: `ROUND(SalesAmount / ExchangeRate, 2)` |
@@ -238,7 +238,7 @@ This data dictionary defines the structure and metadata of both the **Silver (Cl
 ### Gold 2. Table: `dim_customer`
 *   **Type:** Dimension
 *   **Row Count:** `1,679,846` rows
-*   **Description:** Customer master database containing demographics, geography keys, birth dates, and contact addresses. `StartDate` and `EndDate` are dropped as they are not needed for analytics.
+*   **Description:** Customer master database containing demographics, geography keys, birth dates, and contact addresses. `StartDate`, `EndDate`, and `StreetAddress` are dropped as they are not needed for analytics.
 
 | Column Name | Data Type | Key Type | Nullable | Description / Notes |
 |:---|:---|:---|:---|:---|
