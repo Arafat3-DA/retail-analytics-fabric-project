@@ -173,7 +173,7 @@ Dashboard pages:
 
 - **Executive Summary** — Revenue, Profit, Orders KPIs
 - **Financial Performance** — Cost of Sales, Gross Profit Margin, YoY comparisons
-- **Sales Trends** — Monthly and yearly trend lines, MTD/QTD/YTD metrics
+- **Sales Trends & Time Intelligence** — Monthly and yearly trend lines, MTD/QTD/YTD metrics
 - **Product Performance** — Top/bottom products by revenue and margin
 - **Customer & Store Performance** — Segmentation, store rankings, and regional analysis
 
