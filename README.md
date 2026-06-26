@@ -108,10 +108,16 @@ retail-analytics-fabric-project/
 │   └── gold_modeling.ipynb
 │
 ├── 📂 docs/                    # Architecture notes and transformation logic
-│   ├── architecture.md
-│   ├── bronze_to_silver.md
-│   ├── data_dictionary.md
-│   └── silver_to_gold.md
+│   ├── 📂 Microsoft Fabric/    # Fabric data engineering docs
+│   │   ├── architecture.md
+│   │   ├── bronze_to_silver.md
+│   │   ├── data_dictionary.md
+│   │   ├── performance_optimizations.md
+│   │   └── silver_to_gold.md
+│   ├── 📂 Power BI/            # Power BI dashboard docs
+│   │   ├── dax_measures.md
+│   │   └── powerbi_semantic_model.md
+│   └── repository_structure.md
 │
 ├── 📂 Power BI Dashboard/      # Power BI Project (PBIP) files for version control
 │   ├── Retail_Analytics_Dashboard.pbip

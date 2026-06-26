@@ -145,3 +145,11 @@ sequenceDiagram
 ### 4. DirectLake Connection Mode
 *   **Decision:** Connect Power BI dashboards directly to the Gold Lakehouse Delta tables using **DirectLake** mode.
 *   **Rationale:** Combines the performance of Import Mode (caching tables in memory) with the real-time nature of DirectQuery, removing the overhead of setting up and scheduling dashboard refreshes.
+
+### 5. Star Schema Separation (Gold Layer)
+*   **Decision:** Flattened hierarchical dimensions (e.g., product categories) into a single standard Star Schema rather than a Snowflake structure.
+*   **Rationale:** Eliminates complex multi-hop joins during query time, ensuring instantaneous performance for cross-filtering in Power BI.
+
+### 6. Strict Medallion Layer Boundaries
+*   **Decision:** No business logic or aggregations are applied until the Gold layer; Bronze strictly stores raw Parquet, and Silver strictly handles technical data quality (typing/nulls).
+*   **Rationale:** Ensures the Silver layer can be reused for other analytical use-cases (e.g., machine learning models) without being prematurely biased by specific reporting aggregations.
