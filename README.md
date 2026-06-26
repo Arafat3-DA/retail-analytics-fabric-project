@@ -130,8 +130,11 @@ retail-analytics-fabric-project/
 │   │   ├── Gold_transformation_1.png
 │   │   └── Gold_transformation_2.png
 │   └── Power BI/
+│       ├── Fabric Project Video.mp4
 │       ├── PBI_onelake_Connect.png
-│       └── PBI_relationships.png
+│       ├── PBI_relationships.png
+│       ├── Report IMG.png
+│       └── Retail_Analytics_Dashboard.pdf
 │
 ├── LICENSE                     # MIT License
 └── README.md                   # This file
@@ -186,7 +189,7 @@ Dashboard pages:
 | Week 1 | Setup, GitHub, Bronze → Silver transformations | ✅ Complete |
 | Week 2 | Silver → Gold aggregations | ✅ Complete |
 | Week 3 | Power BI dashboard development | ✅ Complete |
-| Week 4 | Final testing, documentation, LinkedIn posts | ⏳ Planned |
+| Week 4 | Final testing, documentation, LinkedIn posts | ✅ Complete |
 
 ---
 
